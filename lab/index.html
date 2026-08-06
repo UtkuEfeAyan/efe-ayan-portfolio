@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Lab // Efe Ayan</title>
+  <meta name="description" content="Procedural Language Generator and text-adventure teaser by Efe Ayan." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Efe Ayan <span>// Game Designer & Creative Coder</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../projects/index.html">Projects</a>
+        <a class="active" href="index.html">Interactive Lab</a>
+        <a href="../narrative/index.html">Narrative & Games</a>
+        <a href="../series/index.html">Series</a>
+        <a href="../about/index.html#skills">Tech Stack</a>
+        <a href="../about/index.html">About / Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="../assets/Efe-Ayan-CV.pdf" download>Download CV / Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Sandbox // live toys</p>
+        <h1>Interactive Mini-Lab</h1>
+        <p class="lead" style="margin-top: 0.85rem;">
+          A fully functional in-browser procedural language generator — plus a teaser for a text-based adventure.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" type="button" data-lab-tab="generator">Language Generator</button>
+          <button class="tab-btn" type="button" data-lab-tab="adventure">Text Adventure Teaser</button>
+        </div>
+
+        <div data-lab-panel="generator">
+          <div class="lab-shell" id="lang-lab">
+            <div class="terminal">
+              <div class="terminal-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span style="margin-left:0.5rem;">conlang.exe — procedural lexicon</span>
+              </div>
+              <div class="terminal-body">
+                <div class="control">
+                  <label>
+                    <span>Word Complexity</span>
+                    <span id="complexity-val">3</span>
+                  </label>
+                  <input id="complexity" type="range" min="1" max="5" value="3" />
+                </div>
+                <div class="control">
+                  <label>
+                    <span>Vowel-to-Consonant Ratio</span>
+                    <span id="vowel-val">55%</span>
+                  </label>
+                  <input id="vowel-ratio" type="range" min="20" max="80" value="55" />
+                </div>
+                <div class="control">
+                  <label>
+                    <span>Alien / Fantasy Theme</span>
+                    <span id="theme-val">Fantasy</span>
+                  </label>
+                  <input id="theme" type="range" min="0" max="2" step="1" value="1" />
+                </div>
+                <button class="btn btn-primary" id="generate-words" type="button">Generate Conlang Words</button>
+                <div class="output-list" id="word-output" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <aside class="lab-side">
+              <div class="panel">
+                <h3>How it works</h3>
+                <p>
+                  Syllable grammars shift with theme: earthlike inventories, fantasy clusters, or alien stacks.
+                  Click any generated word to copy it. Meanings are randomized flavor text for prototyping lore.
+                </p>
+                <p style="margin:0; color:var(--text-dim); font-size:0.85rem;">
+                  Tip: crank complexity + alien theme for denser phonotactics.
+                </p>
+              </div>
+              <div class="panel">
+                <h3>Ship this elsewhere</h3>
+                <p>Embed the same generator in a game UI, Twine passage, or research notebook. Source lives in <code>js/language-gen.js</code>.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div data-lab-panel="adventure" hidden>
+          <div class="panel">
+            <p class="eyebrow">Preview card</p>
+            <h2 style="margin:0.4rem 0 0.75rem;">Text-Based Adventure — Cold Signal Protocol</h2>
+            <p class="lead">
+              You wake inside a research habitat orbiting a silent planet. The AI steward speaks in half-remembered fairy tales.
+              Branching dialogue, inventory riddles, and procedural place-names generated by the lexicon engine above.
+            </p>
+            <div class="hero-ctas" style="margin-top:1.25rem;">
+              <a class="btn btn-primary" href="../narrative/index.html">Play in Browser (preview)</a>
+              <a class="btn btn-ghost" href="../narrative/index.html">Read Script</a>
+            </div>
+            <div class="demo-slot" style="margin-top:1.25rem;">
+              <strong>Adventure media slot</strong>
+              <p>Add a title card image, short trailer, or Twine/Ink build link here when the prototype is ready.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="y"></span> Efe Ayan — Lab builds</span>
+      <a href="../narrative/index.html">Narrative systems →</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+  <script src="../js/language-gen.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Efe Ayan // Game Designer & Creative Coder</title>
+  <meta name="description" content="Portfolio of Efe Ayan — Game Designer, Creative Coder, and AI Researcher at UC Santa Cruz." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Efe Ayan <span>// Game Designer & Creative Coder</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="projects/index.html">Projects</a>
+        <a href="lab/index.html">Interactive Lab</a>
+        <a href="narrative/index.html">Narrative & Games</a>
+        <a href="series/index.html">Series</a>
+        <a href="about/index.html#skills">Tech Stack</a>
+        <a href="about/index.html">About / Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="assets/Efe-Ayan-CV.pdf" download>Download CV / Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-content">
+        <p class="eyebrow">System boot // portfolio_v1</p>
+        <h1>Architecting Play, <span class="gradient-text">Procedural Art</span> &amp; AI Workflows.</h1>
+        <p class="lead" style="margin-top: 1.1rem;">
+          Computer Science &amp; Game Design @ UC Santa Cruz | Exploring the intersection of Game AI,
+          Generative Visuals, and Human-Computer Interaction.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="projects/index.html">Explore Projects</a>
+          <a class="btn btn-ghost" href="lab/index.html">Try Language Generator</a>
+        </div>
+        <div class="hero-meta">
+          <span class="chip">Game AI</span>
+          <span class="chip">TouchDesigner / GLSL</span>
+          <span class="chip">PCG Systems</span>
+          <span class="chip">Narrative Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Selected signal</p>
+          <h2>Featured work</h2>
+          <p class="lead">A quick slice of games, shaders, generative systems, and AI tooling. Full archive lives on the Projects page — swap in your videos, demos, and stills anytime.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-placeholder">Drop video / still here</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
+              <h3>TouchDesigner &amp; Audio-Visualizers</h3>
+              <p>Real-time audio-reactive GLSL shaders and image processing pipelines.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#">GitHub</a>
+                <a class="btn btn-sm btn-primary" href="#">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#">Video</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-placeholder">Drop video / still here</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">p5.js</span><span class="tag">Unity</span><span class="tag">PCG</span></div>
+              <h3>Procedural Map &amp; Pattern Generator</h3>
+              <p>Algorithmic world generation across browser sketches and Unity prototypes.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#">GitHub</a>
+                <a class="btn btn-sm btn-primary" href="#">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#">Video</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div style="margin-top: 1.75rem;">
+          <a class="btn btn-ghost" href="projects/index.html">View all projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Live surface</p>
+          <h2>Interactive Mini-Lab</h2>
+          <p class="lead">Generate fictional lexicons in-browser, then jump into narrative experiments.</p>
+        </div>
+        <div class="panel" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
+          <div>
+            <h3>Procedural Language Generator</h3>
+            <p style="color:var(--text-muted); margin:0.4rem 0 0;">Retro terminal controls for complexity, vowels, and alien/fantasy themes.</p>
+          </div>
+          <a class="btn btn-primary" href="lab/index.html">Enter the Lab</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="y"></span> Efe Ayan — Architecting play &amp; procedural systems.</span>
+      <span>Built for demos, research notes, and shippable experiments.</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+  <script src="js/particles.js"></script>
+</body>
+</html>

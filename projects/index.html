@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects // Efe Ayan</title>
+  <meta name="description" content="Filterable archive of game, shader, generative, and AI research projects by Efe Ayan." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Efe Ayan <span>// Game Designer & Creative Coder</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="active" href="index.html">Projects</a>
+        <a href="../lab/index.html">Interactive Lab</a>
+        <a href="../narrative/index.html">Narrative & Games</a>
+        <a href="../series/index.html">Series</a>
+        <a href="../about/index.html#skills">Tech Stack</a>
+        <a href="../about/index.html">About / Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="../assets/Efe-Ayan-CV.pdf" download>Download CV / Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Archive // projects</p>
+        <h1>Projects showcase</h1>
+        <p class="lead" style="margin-top: 0.85rem;">
+          Filter by discipline. Each card has slots for thumbnails, looping demos, GitHub, playable builds, and a short write-up underneath — ready for your media.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="filter-bar" role="tablist" aria-label="Project filters">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="game">Game Dev &amp; Repos</button>
+          <button class="filter-btn" type="button" data-filter="td">TouchDesigner &amp; Shaders</button>
+          <button class="filter-btn" type="button" data-filter="pcg">Creative Coding &amp; PCG</button>
+          <button class="filter-btn" type="button" data-filter="ai">AI &amp; R&amp;D Tools</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-category="td">
+            <div class="project-media">
+              <!-- Replace with: <video autoplay muted loop playsinline src="../assets/videos/td-av.mp4"></video> -->
+              <div class="media-placeholder">Video / image placeholder</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">TouchDesigner</span>
+                <span class="tag">GLSL</span>
+                <span class="tag">Audio-Reactive</span>
+              </div>
+              <h3>TouchDesigner &amp; Audio-Visualizers</h3>
+              <p>Real-time audio-reactive GLSL shaders and image processing pipelines for live performance and installation.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#" target="_blank" rel="noopener">Video</a>
+              </div>
+              <div class="project-detail">
+                <h4>Project notes</h4>
+                <p>Describe signal chain, shader passes, and performance constraints here. Ideal place for still frames + a short process diary.</p>
+                <div class="demo-slot">
+                  <strong>Demo / media slot</strong>
+                  <p>Drop a looping MP4, GIF, or itch embed under <code>assets/</code> and link the Play button to the live build.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="pcg game">
+            <div class="project-media">
+              <div class="media-placeholder">Video / image placeholder</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">p5.js</span>
+                <span class="tag">Unity</span>
+                <span class="tag">PCG</span>
+              </div>
+              <h3>Procedural Map &amp; Pattern Generator</h3>
+              <p>Algorithmic world generation in p5.js and Unity — noise fields, grammar rules, and playable layout tests.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#" target="_blank" rel="noopener">Video</a>
+              </div>
+              <div class="project-detail">
+                <h4>Project notes</h4>
+                <p>Explain generation pipeline (seed → biome → POIs → playtest loop). Link a browser build or Unity WebGL when ready.</p>
+                <div class="demo-slot">
+                  <strong>Game link slot</strong>
+                  <p>Paste itch.io / WebGL URL into the Play button. Optional: embed a short generation timelapse video above.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ai">
+            <div class="project-media">
+              <div class="media-placeholder">Video / image placeholder</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML/JS</span>
+                <span class="tag">LLM Workflows</span>
+                <span class="tag">Prototyping</span>
+              </div>
+              <h3>AI Prototyping Workflow Engine</h3>
+              <p>Custom web-based tool built in HTML/JS to accelerate game-feature prototyping and evaluation loops.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#" target="_blank" rel="noopener">Video</a>
+              </div>
+              <div class="project-detail">
+                <h4>Project notes</h4>
+                <p>Document prompts, evaluation metrics, and how designers plug mechanics into the workflow. Screenshot the UI chrome here.</p>
+                <div class="demo-slot">
+                  <strong>Demo slot</strong>
+                  <p>Host the tool on GitHub Pages or link a private staging URL. Add a walkthrough video for recruiters who won’t click around.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="game">
+            <div class="project-media">
+              <div class="media-placeholder">Video / image placeholder</div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">FMOD</span>
+                <span class="tag">Audio</span>
+              </div>
+              <h3>FMOD &amp; Unity Audio Integration</h3>
+              <p>Dynamic spatial and adaptive soundscapes for game environments — parameter-driven intensity and locality.</p>
+              <div class="project-links">
+                <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">Play / Demo</a>
+                <a class="btn btn-sm btn-pink" href="#" target="_blank" rel="noopener">Video</a>
+              </div>
+              <div class="project-detail">
+                <h4>Project notes</h4>
+                <p>Call out snapshot transitions, proximity buses, and how gameplay events modulate the mix. Pair with a silent gameplay clip + audio stem.</p>
+                <div class="demo-slot">
+                  <strong>Audio / video slot</strong>
+                  <p>Add a before/after mix comparison video. Link a playable scene that showcases adaptive music layers.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="y"></span> Efe Ayan</span>
+      <a href="../lab/index.html">Open Interactive Lab →</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+  <script src="../js/projects.js"></script>
+</body>
+</html>
