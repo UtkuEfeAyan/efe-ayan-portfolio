@@ -1,0 +1,14 @@
+{
+  "name": "efe-ayan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Efe Ayan — Game Designer, Creative Coder & AI Researcher portfolio",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "npx --yes serve@14 . -p 5173",
+    "preview": "npx --yes serve@14 . -p 5173",
+    "check": "node scripts/check-site.mjs"
+  }
+}

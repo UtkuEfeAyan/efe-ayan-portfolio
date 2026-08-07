@@ -15,17 +15,23 @@ Personal portfolio for **Efe Ayan** — Game Designer, Creative Coder, and AI Re
 
 ## Run locally
 
-No build step required. From this folder:
+Requires **Node.js 24+**. No compile/build step — static HTML/CSS/JS.
 
 ```bash
-# Python
-python -m http.server 5173
-
-# or Node (if installed)
-npx serve .
+npm start
+# or: npm run preview
+# or: npm run check
 ```
 
 Then open `http://localhost:5173`.
+
+## GitHub Pages
+
+Site deploys from `main` via `.github/workflows/deploy-pages.yml` (static upload — **not** Jekyll `/docs`).
+
+Live URL: https://utkuefeayan.github.io/efe-ayan-portfolio/
+
+A `.nojekyll` file is included so GitHub does not try to process the site with Jekyll.
 
 ## Customize
 
