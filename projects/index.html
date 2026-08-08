@@ -26,48 +26,61 @@
     <section class="page-hero container">
       <p class="eyebrow">Polished work</p>
       <h1>Projects</h1>
-      <p class="lead" style="margin-top:0.75rem;">Larger collaborative games and finished systems. Swap titles, media, and links as you ship.</p>
+      <p class="lead" style="margin-top:0.75rem;">Bigger tools and systems. Short blurb on the card — open Details for writeups, tech notes, and gallery slots.</p>
     </section>
 
     <section class="section" style="padding-top:0.5rem;">
       <div class="container project-grid">
         <article class="card">
-          <div class="card-media"><div class="ph">Still / video</div></div>
+          <div class="card-media"><div class="ph">Add cover / trailer</div></div>
           <div class="card-body">
-            <div class="tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
-            <p class="role-line">Role · Team project</p>
-            <h3>Big Game Project A</h3>
-            <p>Describe the game, your systems work, and what players do. Add GitHub / itch / trailer.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repository</a>
-              <a class="btn btn-sm btn-primary" href="#">Play Demo</a>
-              <a class="btn btn-sm btn-ghost" href="#">Video</a>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media"><div class="ph">Still / video</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">Unreal</span><span class="tag">C++</span></div>
-            <p class="role-line">Role · Team project</p>
-            <h3>Big Game Project B</h3>
-            <p>Placeholder for another polished title. Keep this page for complete, people-facing work.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repository</a>
-              <a class="btn btn-sm btn-primary" href="#">Play Demo</a>
-            </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media"><div class="ph">Still / video</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">Web</span><span class="tag">PCG</span></div>
-            <p class="role-line">Solo Developer</p>
+            <div class="tags"><span class="tag">Web</span><span class="tag">Conlang</span><span class="tag">PCG</span></div>
+            <p class="role-line">Solo · Live tool</p>
             <h3>Voices of Void</h3>
-            <p>Full conlang workbench with presets, phonology, writing systems, dictionary, and translation tools.</p>
+            <p>Proto-language workbench — presets, phonology, writing systems, dictionary, and live translation.</p>
             <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Repository</a>
-              <a class="btn btn-sm btn-primary" href="../toys/index.html">Live Toy</a>
+              <a class="btn btn-sm btn-primary" href="../toys/index.html">Play</a>
+              <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Repo</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
+            </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>A dark sci-fi conlang generator for rapid worldbuilding ideation. Load a preset, tweak grammar and phoneme inventories, then generate sample sentences and a mini-dictionary.</p>
+            <h4>Technical</h4>
+            <p>Vanilla JS UI + rule-based word/sentence generation, syllable patterns, writing-system options, and custom word mapping. No build step — runs as a static web app.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media"><div class="ph">Add cover / trailer</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">p5.js</span><span class="tag">Generative</span><span class="tag">Images</span></div>
+            <p class="role-line">Solo · Live tool</p>
+            <h3>Circle Image Generator</h3>
+            <p>Pick an inspiration image and watch colored dots mutate into the picture over time.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-primary" href="../toys/index.html">Play</a>
+              <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Repo</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
+            </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>An evolutionary / pointillist recreation toy. Start from a target photo, seed translucent circles sampled from image colors, then mutate and grow the cloud until the subject emerges.</p>
+            <h4>Technical</h4>
+            <p>p5.js canvas with tunable mutation rate, circle counts, radius, and alpha. Score tracks pixel error vs the inspiration image. Drop more images into the assets folder and register them in <code>getInspirations()</code>.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
             </div>
           </div>
         </article>
@@ -78,7 +91,7 @@
   <footer class="footer">
     <div class="container">
       <span>© <span id="y"></span> Efe Ayan</span>
-      <a href="../minis/index.html">See minis →</a>
+      <a href="../minis/index.html">Minis →</a>
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>

@@ -26,84 +26,67 @@
     <section class="page-hero container">
       <p class="eyebrow">Prototypes &amp; sketches</p>
       <h1>Minis</h1>
-      <p class="lead" style="margin-top:0.75rem;">Smaller games, generative experiments, shaders, and class builds — playable in-browser.</p>
+      <p class="lead" style="margin-top:0.75rem;">Smaller generative builds. Play clean — open Details for writeups and gallery slots.</p>
     </section>
 
     <section class="section" style="padding-top:0.5rem;">
-      <div class="container">
-        <div class="section-head">
-          <h2>CMPM 147 — Generative experiments</h2>
-          <p class="lead">p5.js / canvas labs rewired to run locally (no Glitch). Open any experiment below.</p>
-        </div>
-        <div class="project-grid">
-          <article class="card">
-            <div class="card-media"><div class="ph">Living scene</div></div>
-            <div class="card-body">
-              <div class="tags"><span class="tag">Canvas</span><span class="tag">Generative</span></div>
-              <h3>Experiment 2 — Living Impressions</h3>
-              <p>Day/night landscape with snow, birds, trees, and dolphins. Click to toggle night.</p>
-              <div class="card-actions">
-                <a class="btn btn-sm btn-primary" href="cmpm147/experiment2/index.html">Play</a>
-              </div>
+      <div class="container project-grid">
+        <article class="card">
+          <div class="card-media"><div class="ph">Add still / clip</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">p5.js</span><span class="tag">Tiles</span></div>
+            <h3>Procedural Tileset</h3>
+            <p>Generative island / biome tilemaps with refreshable layouts.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-primary" href="cmpm147/experiment3/index.html">Play</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-media"><div class="ph">Tilemap</div></div>
-            <div class="card-body">
-              <div class="tags"><span class="tag">p5.js</span><span class="tag">Tiles</span></div>
-              <h3>Experiment 3 — Procedural tiles</h3>
-              <p>Generative tilemap using a local 8×8 tileset. Refresh for new layouts.</p>
-              <div class="card-actions">
-                <a class="btn btn-sm btn-primary" href="cmpm147/experiment3/index.html">Play</a>
-              </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>A pixel-map generator that lays ocean, then islands with biome variety and occasional structures — inspired by exploration maps.</p>
+            <h4>Technical</h4>
+            <p>p5.js tile drawing from a local 8×8 tileset, seeded regenerations, and island sizing based on canvas density.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-media"><div class="ph">World sim</div></div>
-            <div class="card-body">
-              <div class="tags"><span class="tag">p5.js</span><span class="tag">World</span></div>
-              <h3>Experiment 4 — Animal world</h3>
-              <p>Procedural board with animals, trees, and a player hunter. Uses local sprites.</p>
-              <div class="card-actions">
-                <a class="btn btn-sm btn-primary" href="cmpm147/experiment4/index.html">Play</a>
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="lead" style="margin-top:1.25rem;">
-          The circle-dot image generator lives under <a href="../toys/index.html" style="color:var(--cyan)">Live Toys</a> — pick an inspiration image and watch it form over time.
-        </p>
+          </div>
+        </article>
 
-        <div class="section-head" style="margin-top:2.5rem;">
-          <h2>Other minis</h2>
-        </div>
-        <div class="project-grid">
-          <article class="card">
-            <div class="card-media"><div class="ph">TD / shader clip</div></div>
-            <div class="card-body">
-              <div class="tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
-              <h3>Audio-Reactive Visuals</h3>
-              <p>Real-time audio-reactive pipelines and shader experiments for live sets.</p>
-              <div class="card-actions">
-                <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-                <a class="btn btn-sm btn-primary" href="#">Video</a>
-              </div>
+        <article class="card">
+          <div class="card-media"><div class="ph">Add still / clip</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">p5.js</span><span class="tag">World</span></div>
+            <h3>Animal World</h3>
+            <p>Isometric playfield that expands from the center; hunt animals, avoid packs, chase a score goal.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-primary" href="cmpm147/experiment4/index.html">Play</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-media"><div class="ph">FMOD / Unity</div></div>
-            <div class="card-body">
-              <div class="tags"><span class="tag">FMOD</span><span class="tag">Unity</span><span class="tag">Reaper</span></div>
-              <h3>Adaptive Audio Mods</h3>
-              <p>Spatial and adaptive soundscape experiments for game environments.</p>
-              <div class="card-actions">
-                <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-                <a class="btn btn-sm btn-primary" href="#">Listen</a>
-              </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>A soft hunting / survival loop on a hashed procedural board. Tiles reveal outward from the middle in square rings so the whole field fills in.</p>
+            <h4>Technical</h4>
+            <p>XXHash-seeded spawns, animal levels/movement toward the player, tree blockers, and local sprite assets. Camera tracks the player each frame.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
             </div>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
+
+      <p class="lead" style="margin-top:1.5rem;">
+        Looking for Voices of Void or the Circle Image Generator? They’re under
+        <a href="../projects/index.html" style="color:var(--cyan)">Projects</a> and playable in
+        <a href="../toys/index.html" style="color:var(--cyan)">Live Toys</a>.
+      </p>
     </section>
   </main>
 

@@ -1,19 +1,95 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
 
-/* Set the canvas element to be the full size of the container */
+:root {
+  --bg: #0b0d10;
+  --panel: #12151a;
+  --border: rgba(0, 242, 254, 0.18);
+  --text: #e8eef5;
+  --muted: #8b97a8;
+  --cyan: #00f2fe;
+  --font: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+body.play-shell {
+  background:
+    radial-gradient(ellipse 70% 40% at 10% -10%, rgba(127,0,255,.12), transparent 55%),
+    radial-gradient(ellipse 50% 30% at 90% 0%, rgba(0,242,254,.08), transparent 50%),
+    var(--bg);
+}
+.play-main {
+  width: min(100% - 1.5rem, 1180px);
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+.play-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.play-bar h1 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.play-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.play-meta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+button {
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  cursor: pointer;
+}
+button:hover { box-shadow: 0 0 18px rgba(0, 242, 254, 0.3); }
+#canvas-container, #container {
+  display: flex;
+  justify-content: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  overflow: auto;
+}
 canvas {
-    width: 100%;
-    height: 100%;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 8px;
+  display: block;
 }
-
-/* Center the canvas element on the page */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#canvas-container {
-    width: 100%;
-    height: 600px;
+.debug-grid {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }

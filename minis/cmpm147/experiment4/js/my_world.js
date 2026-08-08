@@ -90,12 +90,12 @@ function p3_tileHeight() {
 }
 
 function isOnBoard(i, j) {
-  if (i == 0 && j == 0) {
-    return true; // one tile is always visible
-  }
-  if (j >= 0 && j < BOARD_SIZE && i <= 0) {
-    return 5 - i + j / BOARD_SIZE < millis() / 500; // tile appear over time with delay
-  }
+  // Full board: expand from center in square rings (Chebyshev distance)
+  const half = Math.floor(BOARD_SIZE / 2);
+  if (i < -half || i > half || j < -half || j > half) return false;
+  const ring = Math.max(Math.abs(i), Math.abs(j));
+  const revealed = Math.floor(millis() / 180);
+  return ring <= revealed;
 }
 
 function isInPlay(i, j) {

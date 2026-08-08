@@ -1,106 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- This title is used for tabs and bookmarks -->
-    <title>Experiment X - Subject/Topic</title>
-
-    <!-- Use UTF character set, a good idea with any webpage -->
-    <meta charset="UTF-8" />
-    <!-- Set viewport so page remains consistently scaled w narrow devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
-    <!-- <link rel="stylesheet" type="text/css" href="../css/site.css" /> -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-
-    <!-- Load jQuery library -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Load p5.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
-
-    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <!-- <script type="text/javascript" src="../js/site.js" defer></script> -->
-    <!-- Use me for a p5.js project -->
-    <script type="text/javascript" src="./js/sketch.js" defer></script>
-  </head>
-  <body>
-    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-    <main id="content">
-      <h1>Experiment 3 - Alternative Worlds</h1>
-
-      <div class="minor-section">
-        <div id="canvas-container">
-          <span
-            id="canvasContainer"
-            cols="40"
-            rows="40"
-            style="margin: 10px; letter-spacing: 1ex"
-          ></span>
-          <!-- canvas will be added here -->
-        </div>
-        <hr />
-        <div class="fullscreen-box">
-          <button id="refresh-button">Refresh World</button>
-          <button id="fullscreen-button">Fullscreen</button>
-          <hr />
-          <span id="num_of_islands"></span> <br />
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procedural Tileset</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <script src="./js/sketch.js" defer></script>
+</head>
+<body class="play-shell">
+  <main class="play-main">
+    <header class="play-bar">
+      <h1>Procedural Tileset</h1>
+      <div class="play-actions">
+        <button id="refresh-button" type="button">Refresh</button>
+        <button id="fullscreen-button" type="button">Fullscreen</button>
+        <span id="num_of_islands" class="play-meta"></span>
       </div>
-      <hr />
-
-      <textarea
-        cols="40"
-        rows="40"
-        id="string-container"
-        style="
-          opacity: 0.5;
-          letter-spacing: 1ex;
-          width: 640px;
-          margin: 10px;
-          font-family: monospace;
-        "
-      ></textarea>
-
-      <hr />
-
-      <div class="minor-section">
-        <h2>Description</h2>
-        <p>
-          In this experiment, I wanted to create a world full of islands that have a variety of sizes, biomes, and inhabitants. 
-	The mai inspirations for this project were the world of Legend of Zelda: windwaker, as I thought that a pixel map where you go from island to
-        Island could be made and would be fun even though I didn't force it to make an island every time 
-	Just when it want so create multiple color tiel ground it needs to islandize them.
-        </p>
-      </div>
-
-      <div class="minor-section">
-        <h2>Technical</h2>
-        <p>
-          The generator will randomly decide how many islands to create, based off of the size of the canvas. Then for each island, it will create a
-          randomly sized island based on how many islands will populate the screen. The more islands, the smaller they become. After determining
-          each island's size, we then randomly select the biome by assigning it to the grid. Afterwards, the grid will then draw the map, first by
-          layering the ocean, then autotiling the islands in, and then finally, add the houses randomly on valid terrain
-        </p>
-      </div>
-
-      <div class="minor-section">
-        <h2>Reflection</h2>
-        <p>
-          The most difficult part of this experiment was actually trying to understand my implementation of the auto-tiler. I got lost many times
-          trying to figure out which direction corresponded to what bit, and later on, got even more confused at trying to figure out which code
-          corresponded to which orientation, which made pixel mapping annoyingly difficult.
-        </p>
-      </div>
-      <nav id="links" class="minor-section">
-        <!-- Put link back to homepage here. -->
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-        </ul>
-      </nav>
-    </main>
-  </body>
+    </header>
+    <div id="canvas-container">
+      <span id="canvasContainer" cols="40" rows="40"></span>
+    </div>
+    <textarea id="string-container" class="debug-grid" cols="40" rows="40" aria-hidden="true"></textarea>
+  </main>
+</body>
 </html>

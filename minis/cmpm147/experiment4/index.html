@@ -1,98 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
-
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	 <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>  -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"
-      defer
-    ></script>
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-       <!-- <script type="text/javascript" src="../js/site.js" DEFER></script> -->
-	<!-- Use me for a JavaScript OOP Project -->
-	<!--<script type="text/javascript" src="./js/project.js" DEFER></script> -->
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/xxhash.min.js" DEFER></script>
-	<script type="text/javascript" src="./js/my_world.js" DEFER></script>
-	<script type="text/javascript" src="./js/engine.js" DEFER></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js" defer></script>
+  <script src="./js/xxhash.min.js" defer></script>
+  <script src="./js/my_world.js" defer></script>
+  <script src="./js/engine.js" defer></script>
 </head>
-<body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
-
-			<h1>Experiment 04: Infinite Worlds </h1>
-
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-					<!-- <canvas id="scene"></canvas> -->
-               <div id="container"></div>
-
-				</div>
-                <div class="fullscreen-box">
-                    <button id="toggle-fullscreen">Fullscreen</button>
-                </div>
-			</div>
-
-			<div class="minor-section">
-  <h2>Description</h2>
-  <p>
-    For this experiment, I wanted to make a playable world where your goal was to explore and interact with a space filled with animals, kind of like a weird hybrid between a hunting sim and a peaceful survival map. 
-    I liked the idea of a world that wasn’t just visual but had a rule system under the surface: things move, animals chase you, you move around, they respawn, you collect score—it’s like a soft roguelike vibe. 
-    I wanted something where the rules aren’t fully explained but start to make sense the more you play. The look of it came from the default tile system and the example code I remixed, but I added my own rules and feel on top of it.
-  </p>
-</div>
-
-<div class="minor-section">
-  <h2>Technical</h2>
-  <p>
-    I used a tile-based isometric world with a system that randomly spawns animals across a grid using hashed seeds, so the same key always spawns the same creatures. 
-    Animals have types, levels, and movement behavior—they slowly move toward you every few seconds unless they’re too close, then they kill you.
-     I also added trees as static blockers (no animal or player can pass through), and your goal is to click on the animals before they reach you. 
-     Clicking them "defeats" them and adds their level to your score. Once you get to 10,000 points, you win. It’s mostly all done through a set of helper functions like `hasAnimal`, `getAnimalLevel`, and `moveAnimalsTowardPlayer()`. 
-     The tiles are drawn using isometric math and the camera centers around the player each frame. I also added stuff like score display, explosions for when animals disappear, and a spawning system that respawns new animals after you beat others (there is a cap to max aNIMALS ).
-  </p>
-</div>
-
-<div class="minor-section">
-  <h2>Reflection</h2>
-  <p>
-    So... I accidentally remixed the checkers demo instead of the base template, which means a bunch of my UI and layout stuff is different, but I made it work. 
-    The hardest part was understanding the coordinate math and camera stufF OH AND the tile rendering which I kind of brute-forced my way through at first. 
-    The animal movement was fun to implement though—it felt like coding a little ecosystem. I noticed they tend to line up if you wait too long because they all try to find the shortest path to you. 
-    Overall, I’m happy with how it turned out. It has rules, a goal, visual feedback, and even some chaos with the randomized world key logic. 
-    I could’ve polished it more, especially with art, but as a system it’s solid and I think the way it plays is fun and even a bit addicting. 
-    It taught me a lot about systems interacting with each other—like spawn logic, animation states, and player interaction all having to play nice together, at least for such a simple sytem.
-  </p>
-</div>
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-		</nav>
-	</main>
+<body class="play-shell">
+  <main class="play-main">
+    <header class="play-bar">
+      <h1>Animal World</h1>
+      <div class="play-actions">
+        <button id="toggle-fullscreen" type="button">Fullscreen</button>
+      </div>
+    </header>
+    <div id="canvas-container">
+      <div id="container"></div>
+    </div>
+  </main>
 </body>
 </html>

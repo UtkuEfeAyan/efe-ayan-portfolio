@@ -34,4 +34,14 @@
       form.reset();
     });
   }
+
+  document.querySelectorAll('[data-detail-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      if (!card) return;
+      const open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Hide details' : 'Details';
+    });
+  });
 })();
