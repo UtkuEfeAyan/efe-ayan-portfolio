@@ -1181,7 +1181,8 @@ body::-webkit-scrollbar-thumb,
 
 /* responsive */
 
-@media (max-width: 1080px) {
+/* Keep side-by-side layout until fairly narrow (embeds / tablets) */
+@media (max-width: 900px) {
   .app-main {
     flex-direction: column;
   }
@@ -1202,6 +1203,29 @@ body::-webkit-scrollbar-thumb,
 
   .lexicon-double {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 901px) {
+  .app-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .left-panel {
+    flex: 0 0 300px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    position: sticky;
+    top: 12px;
+  }
+
+  .right-panel {
+    min-width: 0;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
