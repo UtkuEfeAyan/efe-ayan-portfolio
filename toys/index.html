@@ -27,20 +27,48 @@
       <p class="eyebrow">Interactive</p>
       <h1>Live Toys</h1>
       <p class="lead" style="margin-top:0.75rem;">
-        <strong>Voices of Void</strong> — controls on the left, language output on the right (same layout as the full app).
+        Playable browser tools — pick a toy below. Drop more inspiration images into the circle generator anytime.
       </p>
-      <div class="toy-actions">
-        <a class="btn btn-primary" href="voices-of-void/index.html" target="_blank" rel="noopener">Open fullscreen</a>
-        <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Source repo</a>
+      <div class="toy-tabs" role="tablist" aria-label="Live toys">
+        <button class="toy-tab active" type="button" data-toy="void" role="tab" aria-selected="true">Language Generator</button>
+        <button class="toy-tab" type="button" data-toy="circles" role="tab" aria-selected="false">Circle Image Generator</button>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0; padding-bottom:2rem;">
+    <section class="section" style="padding-top:0; padding-bottom:2rem;" id="toy-void" data-toy-panel="void">
       <div class="container-wide">
+        <p class="toy-blurb">
+          <strong>Voices of Void</strong> — conlang workbench. Presets &amp; controls on the left, lexicon / sentences on the right.
+        </p>
+        <div class="toy-actions">
+          <a class="btn btn-primary" href="voices-of-void/index.html" target="_blank" rel="noopener">Open fullscreen</a>
+          <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Source repo</a>
+        </div>
         <div class="toy-embed">
           <iframe
             title="Voices of Void — Conlang Generator"
             src="voices-of-void/index.html"
+            loading="lazy"
+            allow="clipboard-write"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;" id="toy-circles" data-toy-panel="circles" hidden>
+      <div class="container-wide">
+        <p class="toy-blurb">
+          <strong>Circle Image Generator</strong> — pick an inspiration image, then watch colored dots mutate into the picture over time.
+          Add more images in <code>minis/cmpm147/experiment5/experiment_5b/assets/</code> and list them in <code>js/my_design.js</code>.
+        </p>
+        <div class="toy-actions">
+          <a class="btn btn-primary" href="../minis/cmpm147/experiment5/experiment_5b/index.html" target="_blank" rel="noopener">Open fullscreen</a>
+          <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Source repo</a>
+        </div>
+        <div class="toy-embed toy-embed-tall">
+          <iframe
+            title="Circle Image Generator"
+            src="../minis/cmpm147/experiment5/experiment_5b/index.html"
             loading="lazy"
             allow="clipboard-write"
           ></iframe>
@@ -52,10 +80,31 @@
   <footer class="footer">
     <div class="container-wide">
       <span>© <span id="y"></span> Efe Ayan</span>
-      <a href="../contact/index.html">Contact →</a>
+      <a href="../minis/index.html">Minis →</a>
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script src="../js/main.js"></script>
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('[data-toy]');
+      const panels = document.querySelectorAll('[data-toy-panel]');
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const id = tab.getAttribute('data-toy');
+          tabs.forEach((t) => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', String(on));
+          });
+          panels.forEach((p) => {
+            const show = p.getAttribute('data-toy-panel') === id;
+            p.hidden = !show;
+            p.style.display = show ? '' : 'none';
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
