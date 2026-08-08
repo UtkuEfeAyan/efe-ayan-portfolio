@@ -34,6 +34,9 @@ body.play-shell {
   margin: 0 auto;
   padding: 1rem 0 2rem;
 }
+.play-main.circle-toy {
+  width: min(100% - 1.5rem, 1280px);
+}
 
 .play-bar {
   display: flex;
@@ -172,14 +175,55 @@ canvas {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 0.75rem;
-  min-height: 320px;
+  padding: 0.85rem;
+  min-height: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   overflow: auto;
 }
-#active { width: 100%; display: flex; justify-content: center; }
+.compare-stack {
+  width: min(100%, 640px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0 auto;
+}
+.compare-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.compare-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+#active,
+#reference {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #0a0c10;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+#active canvas,
+#reference .reference-img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.reference-img {
+  object-fit: contain;
+  background: #0a0c10;
+}
 .memory {
   margin: 2px;
   border-radius: 4px;

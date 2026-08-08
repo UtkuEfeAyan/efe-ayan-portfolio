@@ -22,16 +22,16 @@
     <div class="circle-layout">
       <aside class="circle-controls">
         <label class="ctrl">
-          <span>Mutation rate (<span id="rate"></span>%)</span>
+          <span>Mutation rate (<span id="rate">100</span>%)</span>
           <input id="slider" type="range" min="1" max="100" value="100" />
         </label>
         <label class="ctrl">
           <span>Mutation cycles</span>
-          <input id="thresholdInput" type="number" value="100" min="1" />
+          <input id="thresholdInput" type="number" value="10" min="1" />
         </label>
         <label class="ctrl">
           <span>New circles / cycle</span>
-          <input id="newCirclesInput" type="number" value="500" min="0" />
+          <input id="newCirclesInput" type="number" value="1000" min="0" max="5000" />
         </label>
         <label class="ctrl">
           <span>Min circle size</span>
@@ -39,11 +39,11 @@
         </label>
         <label class="ctrl">
           <span>Max circle size</span>
-          <input id="maxRadiusInput" type="number" value="5" min="1" />
+          <input id="maxRadiusInput" type="number" value="8" min="1" />
         </label>
         <label class="ctrl">
           <span>Max total circles</span>
-          <input id="maxCirclesInput" type="number" value="10000" min="100" />
+          <input id="maxCirclesInput" type="number" value="20000" min="100" max="30000" />
         </label>
         <label class="ctrl">
           <span>Min alpha</span>
@@ -63,8 +63,18 @@
           <div id="memory" data-max-items="16"></div>
         </div>
       </aside>
+
       <div class="circle-stage">
-        <div id="active"></div>
+        <div class="compare-stack">
+          <div class="compare-panel">
+            <span class="compare-label">Generated</span>
+            <div id="active"></div>
+          </div>
+          <div class="compare-panel">
+            <span class="compare-label">Original</span>
+            <div id="reference"></div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
