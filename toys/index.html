@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me // Efe Ayan</title>
+  <title>Live Toys // Efe Ayan</title>
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
@@ -13,10 +13,10 @@
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav-links" aria-label="Primary">
         <a href="../index.html">Home</a>
-        <a class="active" href="index.html">About Me</a>
+        <a href="../about/index.html">About Me</a>
         <a href="../projects/index.html">Projects</a>
         <a href="../minis/index.html">Minis</a>
-        <a href="../toys/index.html">Live Toys</a>
+        <a class="active" href="index.html">Live Toys</a>
         <a href="../contact/index.html">Contact</a>
       </nav>
     </div>
@@ -24,21 +24,26 @@
 
   <main>
     <section class="page-hero container">
-      <p class="eyebrow">About</p>
-      <h1>About Me</h1>
+      <p class="eyebrow">Interactive</p>
+      <h1>Live Toys</h1>
+      <p class="lead" style="margin-top:0.75rem;">
+        Playable browser experiments. This page embeds the full <strong>Voices of Void</strong> conlang generator.
+      </p>
+      <div class="toy-actions">
+        <a class="btn btn-primary" href="voices-of-void/index.html" target="_blank" rel="noopener">Open fullscreen</a>
+        <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Source repo</a>
+      </div>
     </section>
+
     <section class="section" style="padding-top:0;">
-      <div class="container about-block">
-        <p>
-          I’m Efe Ayan — a game designer, creative coder, and AI researcher studying Computer Science &amp; Game Design at UC Santa Cruz.
-          I care about systems that feel playful and precise: procedural languages, adaptive audio, generative visuals, and tools that help teams prototype faster.
-        </p>
-        <p>
-          Outside of class builds I’m usually deep in lore rabbit holes, TouchDesigner experiments, or D&amp;D worldbuilding — which is exactly why tools like Voices of Void exist.
-        </p>
-        <div class="hero-links" style="margin-top:1.25rem;">
-          <a class="btn btn-primary" href="../contact/index.html">Contact</a>
-          <a class="btn btn-ghost" href="../assets/Efe-Ayan-CV.pdf" download>Download CV</a>
+      <div class="container">
+        <div class="toy-embed">
+          <iframe
+            title="Voices of Void — Conlang Generator"
+            src="voices-of-void/index.html"
+            loading="lazy"
+            allow="clipboard-write"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -47,7 +52,7 @@
   <footer class="footer">
     <div class="container">
       <span>© <span id="y"></span> Efe Ayan</span>
-      <a href="../index.html">Home →</a>
+      <a href="../contact/index.html">Contact →</a>
     </div>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>

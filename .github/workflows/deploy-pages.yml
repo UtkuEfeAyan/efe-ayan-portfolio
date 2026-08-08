@@ -32,10 +32,7 @@ jobs:
       - name: Verify site files
         run: |
           node -v
-          test -f index.html
-          test -f css/styles.css
-          test -f js/main.js
-          echo "Static site ready for Pages (Node $(node -v))"
+          node scripts/check-site.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,9 +40,7 @@ jobs:
       - name: Stage publish directory
         run: |
           mkdir -p _site
-          cp -R index.html .nojekyll css js about assets lab narrative projects series _site/
-          # Keep README out of the published site root noise if desired; optional copy:
-          # cp README.md _site/
+          cp -R index.html .nojekyll css js about assets projects minis contact toys _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minis // Efe Ayan</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html">Portfolio</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About Me</a>
+        <a href="../projects/index.html">Projects</a>
+        <a class="active" href="index.html">Minis</a>
+        <a href="../toys/index.html">Live Toys</a>
+        <a href="../contact/index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <p class="eyebrow">Prototypes &amp; sketches</p>
+      <h1>Minis</h1>
+      <p class="lead" style="margin-top:0.75rem;">Smaller games, shaders, TouchDesigner sets, audio experiments, and half-finished ideas worth showing.</p>
+    </section>
+
+    <section class="section" style="padding-top:0.5rem;">
+      <div class="container project-grid">
+        <article class="card">
+          <div class="card-media"><div class="ph">TD / shader clip</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
+            <h3>Audio-Reactive Visuals</h3>
+            <p>Real-time audio-reactive pipelines and shader experiments for live sets.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+              <a class="btn btn-sm btn-primary" href="#">Video</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><div class="ph">p5 / Unity still</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">p5.js</span><span class="tag">PCG</span></div>
+            <h3>Procedural Map Sketches</h3>
+            <p>Algorithmic map and pattern generators — browser sketches and Unity tests.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+              <a class="btn btn-sm btn-primary" href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><div class="ph">FMOD / Unity</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">FMOD</span><span class="tag">Unity</span><span class="tag">Reaper</span></div>
+            <h3>Adaptive Audio Mods</h3>
+            <p>Spatial and adaptive soundscape experiments for game environments.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+              <a class="btn btn-sm btn-primary" href="#">Listen</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media"><div class="ph">Prototype still</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">Unity</span><span class="tag">Prototype</span></div>
+            <h3>Small Game Prototype</h3>
+            <p>Slot for unfinished or bite-sized games — mechanics tests, jams, class builds.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+              <a class="btn btn-sm btn-primary" href="#">Play</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="y"></span> Efe Ayan</span>
+      <a href="../toys/index.html">Live Toys →</a>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -3,112 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Efe Ayan // Game Designer & Creative Coder</title>
-  <meta name="description" content="Portfolio of Efe Ayan — Game Designer, Creative Coder, and AI Researcher at UC Santa Cruz." />
+  <title>Efe Ayan // Portfolio</title>
+  <meta name="description" content="Efe Ayan — Game Designer, Creative Coder, and AI Researcher at UC Santa Cruz." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html">Efe Ayan <span>// Game Designer & Creative Coder</span></a>
+      <a class="brand" href="index.html">Portfolio</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links" aria-label="Primary">
+        <a class="active" href="index.html">Home</a>
+        <a href="about/index.html">About Me</a>
         <a href="projects/index.html">Projects</a>
-        <a href="lab/index.html">Interactive Lab</a>
-        <a href="narrative/index.html">Narrative & Games</a>
-        <a href="series/index.html">Series</a>
-        <a href="about/index.html#skills">Tech Stack</a>
-        <a href="about/index.html">About / Contact</a>
+        <a href="minis/index.html">Minis</a>
+        <a href="toys/index.html">Live Toys</a>
+        <a href="contact/index.html">Contact</a>
       </nav>
-      <div class="nav-actions">
-        <a class="btn btn-primary" href="assets/Efe-Ayan-CV.pdf" download>Download CV / Resume</a>
-      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="container hero-content">
-        <p class="eyebrow">System boot // portfolio_v1</p>
-        <h1>Architecting Play, <span class="gradient-text">Procedural Art</span> &amp; AI Workflows.</h1>
-        <p class="lead" style="margin-top: 1.1rem;">
-          Computer Science &amp; Game Design @ UC Santa Cruz | Exploring the intersection of Game AI,
-          Generative Visuals, and Human-Computer Interaction.
+    <section class="container home-hero">
+      <div class="portrait portrait-fallback" role="img" aria-label="Portrait placeholder">
+        Add photo<br />assets/images/portrait.jpg
+      </div>
+      <div>
+        <p class="eyebrow">UC Santa Cruz</p>
+        <h1>Efe Ayan</h1>
+        <p class="role">Game Designer &amp; Creative Coder · AI Researcher</p>
+        <p class="lead" style="margin-top:0.85rem;">
+          Building playable systems at the intersection of Game AI, generative visuals, and interactive narrative.
         </p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="projects/index.html">Explore Projects</a>
-          <a class="btn btn-ghost" href="lab/index.html">Try Language Generator</a>
-        </div>
-        <div class="hero-meta">
-          <span class="chip">Game AI</span>
-          <span class="chip">TouchDesigner / GLSL</span>
-          <span class="chip">PCG Systems</span>
-          <span class="chip">Narrative Design</span>
+        <div class="hero-links">
+          <a class="btn btn-primary" href="https://github.com/UtkuEfeAyan" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="assets/Efe-Ayan-CV.pdf" download>Resume</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="container tech-section">
+      <h3>Technologies</h3>
+      <div class="tech-grid">
+        <a class="tech" href="https://unity.com/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="" />Unity</a>
+        <a class="tech" href="https://www.unrealengine.com/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="" />Unreal</a>
+        <a class="tech" href="https://derivative.ca/" target="_blank" rel="noopener"><span style="color:var(--cyan)">TD</span>TouchDesigner</a>
+        <a class="tech" href="https://p5js.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/p5js/p5js-original.svg" alt="" />p5.js</a>
+        <a class="tech" href="https://www.typescriptlang.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" />TypeScript</a>
+        <a class="tech" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" />JavaScript</a>
+        <a class="tech" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" />HTML</a>
+        <a class="tech" href="https://www.java.com/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" />Java</a>
+        <a class="tech" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" />C#</a>
+        <a class="tech" href="https://isocpp.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" />C++</a>
+        <a class="tech" href="https://www.python.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" />Python</a>
+        <a class="tech" href="https://phaser.io/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" />Phaser</a>
+        <a class="tech" href="https://www.electronjs.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="" />Electron</a>
+        <a class="tech" href="https://nodejs.org/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />Node.js</a>
+        <a class="tech" href="https://www.figma.com/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" />Figma</a>
+        <a class="tech" href="https://github.com/" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" />GitHub</a>
+        <a class="tech" href="https://www.reaper.fm/" target="_blank" rel="noopener"><span style="color:var(--pink)">R</span>Reaper</a>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Selected signal</p>
-          <h2>Featured work</h2>
-          <p class="lead">A quick slice of games, shaders, generative systems, and AI tooling. Full archive lives on the Projects page — swap in your videos, demos, and stills anytime.</p>
+          <h2>Featured Projects</h2>
+          <p class="lead">A selection of polished team work and shipped systems. Full list on Projects.</p>
         </div>
         <div class="project-grid">
-          <article class="project-card">
-            <div class="project-media">
-              <div class="media-placeholder">Drop video / still here</div>
-            </div>
-            <div class="project-body">
-              <div class="project-tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
-              <h3>TouchDesigner &amp; Audio-Visualizers</h3>
-              <p>Real-time audio-reactive GLSL shaders and image processing pipelines.</p>
-              <div class="project-links">
-                <a class="btn btn-sm btn-ghost" href="#">GitHub</a>
-                <a class="btn btn-sm btn-primary" href="#">Play / Demo</a>
-                <a class="btn btn-sm btn-pink" href="#">Video</a>
+          <article class="card">
+            <div class="card-media"><div class="ph">Project media</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">Unity</span><span class="tag">Team</span></div>
+              <p class="role-line">Game Designer / Systems</p>
+              <h3>Featured Game Project</h3>
+              <p>Placeholder for a polished collaborative game. Add title, role, stills, and links.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-ghost" href="#">Repository</a>
+                <a class="btn btn-sm btn-primary" href="#">Play Demo</a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-media">
-              <div class="media-placeholder">Drop video / still here</div>
-            </div>
-            <div class="project-body">
-              <div class="project-tags"><span class="tag">p5.js</span><span class="tag">Unity</span><span class="tag">PCG</span></div>
-              <h3>Procedural Map &amp; Pattern Generator</h3>
-              <p>Algorithmic world generation across browser sketches and Unity prototypes.</p>
-              <div class="project-links">
-                <a class="btn btn-sm btn-ghost" href="#">GitHub</a>
-                <a class="btn btn-sm btn-primary" href="#">Play / Demo</a>
-                <a class="btn btn-sm btn-pink" href="#">Video</a>
+          <article class="card">
+            <div class="card-media"><div class="ph">Project media</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">Conlang</span><span class="tag">Web</span></div>
+              <p class="role-line">Solo Developer</p>
+              <h3>Voices of Void</h3>
+              <p>Proto-language workbench — grammar, phonology, writing systems, dictionary, and live translation.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/VoicesOfVoid" target="_blank" rel="noopener">Repository</a>
+                <a class="btn btn-sm btn-primary" href="toys/index.html">Try Live Toy</a>
               </div>
             </div>
           </article>
         </div>
-        <div style="margin-top: 1.75rem;">
-          <a class="btn btn-ghost" href="projects/index.html">View all projects →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Live surface</p>
-          <h2>Interactive Mini-Lab</h2>
-          <p class="lead">Generate fictional lexicons in-browser, then jump into narrative experiments.</p>
-        </div>
-        <div class="panel" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;">
-          <div>
-            <h3>Procedural Language Generator</h3>
-            <p style="color:var(--text-muted); margin:0.4rem 0 0;">Retro terminal controls for complexity, vowels, and alien/fantasy themes.</p>
-          </div>
-          <a class="btn btn-primary" href="lab/index.html">Enter the Lab</a>
+        <div style="margin-top:1.5rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <a class="btn btn-ghost" href="projects/index.html">All projects →</a>
+          <a class="btn btn-ghost" href="minis/index.html">Minis &amp; prototypes →</a>
         </div>
       </div>
     </section>
@@ -116,13 +112,11 @@
 
   <footer class="footer">
     <div class="container">
-      <span>© <span id="y"></span> Efe Ayan — Architecting play &amp; procedural systems.</span>
-      <span>Built for demos, research notes, and shippable experiments.</span>
+      <span>© <span id="y"></span> Efe Ayan</span>
+      <a href="contact/index.html">Get in touch →</a>
     </div>
   </footer>
-
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
-  <script src="js/particles.js"></script>
 </body>
 </html>
