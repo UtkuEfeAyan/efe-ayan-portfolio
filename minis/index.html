@@ -26,59 +26,92 @@
     <section class="page-hero container">
       <p class="eyebrow">Prototypes &amp; sketches</p>
       <h1>Minis</h1>
-      <p class="lead" style="margin-top:0.75rem;">Smaller games, shaders, TouchDesigner sets, audio experiments, and half-finished ideas worth showing.</p>
+      <p class="lead" style="margin-top:0.75rem;">Smaller games, generative experiments, shaders, and class builds — playable in-browser.</p>
     </section>
 
     <section class="section" style="padding-top:0.5rem;">
-      <div class="container project-grid">
-        <article class="card">
-          <div class="card-media"><div class="ph">TD / shader clip</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
-            <h3>Audio-Reactive Visuals</h3>
-            <p>Real-time audio-reactive pipelines and shader experiments for live sets.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-              <a class="btn btn-sm btn-primary" href="#">Video</a>
+      <div class="container">
+        <div class="section-head">
+          <h2>CMPM 147 — Generative experiments</h2>
+          <p class="lead">p5.js / canvas labs rewired to run locally (no Glitch). Open any experiment below.</p>
+        </div>
+        <div class="project-grid">
+          <article class="card">
+            <div class="card-media"><div class="ph">Living scene</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">Canvas</span><span class="tag">Generative</span></div>
+              <h3>Experiment 2 — Living Impressions</h3>
+              <p>Day/night landscape with snow, birds, trees, and dolphins. Click to toggle night.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-primary" href="cmpm147/experiment2/index.html">Play</a>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media"><div class="ph">p5 / Unity still</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">p5.js</span><span class="tag">PCG</span></div>
-            <h3>Procedural Map Sketches</h3>
-            <p>Algorithmic map and pattern generators — browser sketches and Unity tests.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-              <a class="btn btn-sm btn-primary" href="#">Demo</a>
+          </article>
+          <article class="card">
+            <div class="card-media"><div class="ph">Tilemap</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">p5.js</span><span class="tag">Tiles</span></div>
+              <h3>Experiment 3 — Procedural tiles</h3>
+              <p>Generative tilemap using a local 8×8 tileset. Refresh for new layouts.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-primary" href="cmpm147/experiment3/index.html">Play</a>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media"><div class="ph">FMOD / Unity</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">FMOD</span><span class="tag">Unity</span><span class="tag">Reaper</span></div>
-            <h3>Adaptive Audio Mods</h3>
-            <p>Spatial and adaptive soundscape experiments for game environments.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-              <a class="btn btn-sm btn-primary" href="#">Listen</a>
+          </article>
+          <article class="card">
+            <div class="card-media"><div class="ph">World sim</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">p5.js</span><span class="tag">World</span></div>
+              <h3>Experiment 4 — Animal world</h3>
+              <p>Procedural board with animals, trees, and a player hunter. Uses local sprites.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-primary" href="cmpm147/experiment4/index.html">Play</a>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media"><div class="ph">Prototype still</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">Unity</span><span class="tag">Prototype</span></div>
-            <h3>Small Game Prototype</h3>
-            <p>Slot for unfinished or bite-sized games — mechanics tests, jams, class builds.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="#">Repo</a>
-              <a class="btn btn-sm btn-primary" href="#">Play</a>
+          </article>
+          <article class="card">
+            <div class="card-media"><div class="ph">Dots → image</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">p5.js</span><span class="tag">Images</span></div>
+              <h3>Experiment 5 — Circle recreations</h3>
+              <p>Build famous (and personal) images over time with mutating colored dots. Two versions.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-primary" href="cmpm147/experiment5/experiment_5a/index.html">Play 5a</a>
+                <a class="btn btn-sm btn-ghost" href="cmpm147/experiment5/experiment_5b/index.html">Play 5b</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top:2.5rem;">
+          <h2>Other minis</h2>
+        </div>
+        <div class="project-grid">
+          <article class="card">
+            <div class="card-media"><div class="ph">TD / shader clip</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">TouchDesigner</span><span class="tag">GLSL</span></div>
+              <h3>Audio-Reactive Visuals</h3>
+              <p>Real-time audio-reactive pipelines and shader experiments for live sets.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+                <a class="btn btn-sm btn-primary" href="#">Video</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media"><div class="ph">FMOD / Unity</div></div>
+            <div class="card-body">
+              <div class="tags"><span class="tag">FMOD</span><span class="tag">Unity</span><span class="tag">Reaper</span></div>
+              <h3>Adaptive Audio Mods</h3>
+              <p>Spatial and adaptive soundscape experiments for game environments.</p>
+              <div class="card-actions">
+                <a class="btn btn-sm btn-ghost" href="#">Repo</a>
+                <a class="btn btn-sm btn-primary" href="#">Listen</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>

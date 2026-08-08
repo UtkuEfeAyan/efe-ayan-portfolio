@@ -15,6 +15,10 @@ const required = [
   "toys/voices-of-void/index.html",
   "toys/voices-of-void/style.css",
   "toys/voices-of-void/src/ui.js",
+  "minis/cmpm147/experiment2/index.html",
+  "minis/cmpm147/experiment3/img/tilesetP8.png",
+  "minis/cmpm147/experiment4/img/human-red.png",
+  "minis/cmpm147/experiment5/experiment_5a/assets/lunch-on-a-skyscraper.jpg",
   ".nojekyll",
 ];
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment X - Subject/Topic</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment X - Subject/Topic</h1>
+
+			<div class="minor-section">
+				<button id="clicker">reroll</button>
+
+				<div class="minor-section">
+					<div id="box"></div>
+				</div>
+                <div class="fullscreen-box">
+                    <button id="toggle-fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p> I wanted to create a randomized adventure quest that feels like the opening dialog of a video game, based on my birth country, Turkey.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+				<p>I categorized the adventure into 11 different segments. Each segment had a list of possible options fitting the theme, so when creating a new quest, the program would randomly pick one item from each category. This made sure the adventure still made sense instead of being totally random nonsense.Then, I created a reroll button placed at the top left corner. When clicked, it would trigger the randomizer again, generating a completely new adventure scenario by selecting different random elements from each category.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p>I camed up with an idea I liked early making my job easier, At first, it was tricky to balance randomness with coherence. If everything was too random, the generated quests didn’t make sense. then I realized that I needed to catagorzie the randomness for less chaos. The final project worked well the reroll button generated different adventures with a good variety each time. It felt satisfying to see the system create fun combinations I hadn’t even planned for</p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>

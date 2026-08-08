@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This title is used for tabs and bookmarks -->
+  <title> Experiment 5_b: Evolutionary Impressions</title>
+
+  <!-- Use UTF character set, a good idea with any webpage -->
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Set viewport so page remains consistently scaled w narrow devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/site.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+  <script src="./js/my_design.js" defer></script>
+  <script src="./js/sketch.js" defer></script>
+</head>
+
+<body>
+  <main id="content">
+
+    <section>
+
+      <div class="minor-section">
+        <div id="canvas-container">
+          <!-- canvas will be added here -->
+          <!-- <canvas id="scene"></canvas> -->
+
+          <select id="dropper"></select>
+          <button id="restart">
+            restart
+          </button>
+          <p>
+            Mutation rate (<span id="rate"></span>%):<br /><input id="slider" type="range" min="1" max="100"
+              value="100" />
+          </p>
+          <p>
+            Mutation Numbers Per Cycle: <input id="thresholdInput" type="number" value="100" min="1" />
+          </p>
+          <p>
+            New Circles Per Cycle: <input id="newCirclesInput" type="number" value="500" min="0" />
+          </p>
+          <p>
+            Min circle size: <input id="minRadiusInput" type="number" value="3" min="1" />
+          </p>
+          <p>
+            Max circle size:<input id="maxRadiusInput" type="number" value="5" min="1" />
+          </p>
+          <p>
+            Max total circles:<input id="maxCirclesInput" type="number" value="10000" min="100" />
+          </p>
+          <p>
+            Min Transparency (Alpha 0–255):<input id="minAlphaInput" type="number" min="0" max="255" value="60" />
+          </p>
+          <p>
+            Max Transparency (Alpha 0–255):<input id="maxAlphaInput" type="number" min="0" max="255" value="180" />
+          </p>
+          <p id="active"></p>
+          <p>Active score: <span id="activeScore"></span></p>
+          <p>Exploration rate: <span id="fpsCounter"></span> fps</p>
+          <p>Circle count: <span id="circleCounter">0</span></p>
+          <p id="best"></p>
+          <p>Best score: <span id="bestScore"></span></p>
+          <p id="memory" data-max-items="16"></p>
+        </div>
+      </div>
+      <div class="minor-section">
+        <h2>Description</h2>
+        <p>For this experiment, I wanted to make a generator that feels like an image is slowly forming over time—not instantly shown, but built through layers of mutated shapes. 
+          My idea was to start with large, soft circles and then keep adding smaller, more specific ones as time passed. Basically, create something that slowly becomes more recognizable and detailed. 
+          But then I realized the assignment wanted more user control and mutation-based interaction, so I made two versions: one that's more straightforward and fits the assignment exactly (experiment_5a), and another (experiment_5b) which this one is experiment_5b.
+          which mushc more of waht i wanted but might violate the  fps limit rule. The final version is super customizable and lets the user control how quickly the image evolves, how soft or sharp it looks, and how chaotic the generation feels.
+  </p>
+      </div>
+
+      <div class="minor-section">
+        <h2>Technical</h2>
+        <p>I built a visual mutation system that draws transparent circles onto a canvas to try to match a target image. 
+          You can control mutation cycle speed, number of new circles per cycle, min and max radius of the circles, and their alpha (transparency). 
+          All of this is controlled through sliders and number inputs, so the viewer shapes the process directly. 
+          The circle data is stored and mutated across time, and every few frames (depending on the threshold you set), new circles are added based on your parameters.
+           There's also a live circle counter and score tracking (based on color matching error to the target image). 
+           I implemented safety limits to prevent the FPS from dropping too hard, and added a bunch of toggles to make the generator more modular and tweakable. 
+          Honestly it’s kind of like a pointillist version of an evolutionary algorithm but with visual feedback and manual control.</p>
+      </div>
+
+      <div class="minor-section">
+        <h2>Reflection</h2>
+        <p>This was the experiment I spent the most time on by far. It started simple, but I kept wanting to add more to it—more control, more feedback, more personality. 
+          I liked the idea of the user being able to tune how the image “emerges,” and I ended up with something that felt really satisfying to watch.
+           It wasn't easy though—there were a bunch of issues with performance and debugging visual glitches when too many circles were added, and some math stuff with how alpha blended. 
+           But in the end, it was worth it. I had fun trying to make something that feels alive and shaped by the viewer.
+            It’s also one of those pieces where the randomness feels meaningful because you're giving it a shape to follow, not just letting it go completely wild. 
+          And yeah, I might have gone overboard with how many tweakable variables there are—but that’s the fun part.</p>
+      </div>
+
+    </section>
+    <nav id="links" class="minor-section">
+      <!-- Put link back to homepage here. -->
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </main>
+</body>
+
+</html>
