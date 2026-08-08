@@ -66,10 +66,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: min(100% - 3rem, 1180px);
+  margin-inline: auto;
 }
 
 .app-header {
-  padding: 20px 32px 10px;
+  padding: 16px 20px 10px;
   border-bottom: 1px solid rgba(148, 163, 255, 0.2);
   background: linear-gradient(
       to right,
@@ -108,21 +110,24 @@ body {
 
 .app-main {
   flex: 1;
-  display: flex;
-  gap: 24px;
-  padding: 18px 32px 32px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+  gap: 28px;
+  padding: 16px 20px 28px;
+  align-items: start;
 }
 
 /* left panel */
 
 .left-panel {
-  flex: 0 0 320px;
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   background: var(--bg-panel);
   border-radius: 16px;
-  padding: 18px 18px 20px;
+  padding: 14px 14px 16px;
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(0, 242, 254, 0.22);
 }
@@ -414,16 +419,16 @@ body {
 /* right side */
 
 .right-panel {
-  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   color: var(--text-main);
 }
 
 .language-header {
-  padding: 16px 20px 14px;
-  border-radius: 16px;
+  padding: 12px 14px 10px;
+  border-radius: 14px;
   background:
     radial-gradient(circle at 0 0, rgba(127, 0, 255, 0.18), transparent 55%),
     radial-gradient(circle at 85% 0, rgba(0, 242, 254, 0.12), transparent 60%),
@@ -435,7 +440,7 @@ body {
 .language-name {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
@@ -443,7 +448,7 @@ body {
 
 .language-tagline {
   margin: 4px 0 0;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-soft);
 }
 
@@ -452,7 +457,7 @@ body {
 .info-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .info-card {
@@ -462,15 +467,16 @@ body {
   box-shadow: var(--shadow-subtle);
   overflow: hidden;
   position: relative;
+  height: fit-content;
 }
 
 .card-header {
-  padding: 10px 13px 6px;
+  padding: 8px 10px 5px;
   border-bottom: 1px solid rgba(37, 46, 102, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
 }
 
 .card-header-with-button {
@@ -507,12 +513,13 @@ body {
 }
 
 .card-body {
-  padding: 8px 12px 10px;
+  padding: 6px 10px 8px;
 }
 
 .meta-block {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-soft);
+  line-height: 1.4;
 }
 
 .meta-line + .meta-line {
@@ -524,17 +531,14 @@ body {
 .lexicon-section {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 #alphabet-card {
   display: flex;
   flex-direction: column;
-  max-height: 450px;
-}
-
-.card-body {
-  padding: 8px 12px 10px;
+  max-height: 260px;
+  height: fit-content;
 }
 
 #alphabet-card .card-body {
@@ -660,15 +664,15 @@ body {
 
 .lexicon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .lex-card-wrapper {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 260px;
   background: rgba(12, 16, 40, 0.98);
   border: 1px solid rgba(51, 65, 160, 0.95);
   border-radius: 14px;
@@ -676,7 +680,7 @@ body {
 }
 
 .lex-card-small {
-  height: 180px;
+  height: 140px;
 }
 
 .lex-card-header {
@@ -1183,14 +1187,22 @@ body::-webkit-scrollbar-thumb,
 
 /* Keep side-by-side layout until fairly narrow (embeds / tablets) */
 @media (max-width: 900px) {
+  #app {
+    width: min(100% - 1.5rem, 1180px);
+  }
+
   .app-main {
+    display: flex;
     flex-direction: column;
+    gap: 18px;
   }
 
   .left-panel {
     flex: none;
     width: 100%;
     order: 1;
+    max-height: none;
+    position: static;
   }
 
   .right-panel {
@@ -1208,12 +1220,13 @@ body::-webkit-scrollbar-thumb,
 
 @media (min-width: 901px) {
   .app-main {
-    flex-direction: row;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+    gap: 28px;
+    align-items: start;
   }
 
   .left-panel {
-    flex: 0 0 300px;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
     position: sticky;
@@ -1224,6 +1237,12 @@ body::-webkit-scrollbar-thumb,
     min-width: 0;
   }
 
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
   .info-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
