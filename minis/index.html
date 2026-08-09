@@ -27,7 +27,7 @@
     <section class="page-hero container">
       <p class="eyebrow">Prototypes &amp; sketches</p>
       <h1>Minis</h1>
-      <p class="lead" style="margin-top:0.75rem;">Smaller generative builds and prototypes. Click Details for writeups — playable games live in the <a href="../games/index.html" style="color:var(--cyan)">Web Games</a> tab.</p>
+      <p class="lead" style="margin-top:0.75rem;">Smaller generative builds and prototypes. Play everything in <a href="../games/index.html" style="color:var(--cyan)">Web Games</a> or <a href="../toys/index.html" style="color:var(--cyan)">Live Toys</a> — cards here show Repo and Details.</p>
     </section>
 
     <section class="section" style="padding-top:0.5rem;">
@@ -41,16 +41,16 @@
             <h3>Circle Image Generator</h3>
             <p>Pick an inspiration image and watch colored dots evolve into the picture via a pointillist mutation algorithm.</p>
             <div class="card-actions">
-              <a class="btn btn-sm btn-primary" href="../toys/index.html">Play in Live Toys</a>
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
               <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Repo</a>
               <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
           </div>
           <div class="card-detail">
             <h4>About</h4>
-            <p>An evolutionary / pointillist recreation toy. Start from a target photo, seed translucent circles sampled from image colors, then mutate and grow the cloud until the subject emerges.</p>
+            <p>An evolutionary / pointillist recreation toy. Seed translucent circles sampled from image colors, then mutate and grow the cloud until the subject emerges.</p>
             <h4>Technical</h4>
-            <p>p5.js canvas with tunable mutation rate, circle counts, radius, and alpha. Score tracks pixel error vs the inspiration image. Drop more images into assets and register them in <code>getInspirations()</code>.</p>
+            <p>p5.js canvas with tunable mutation rate, circle counts, radius, and alpha. Score tracks pixel error vs the inspiration image.</p>
             <h4>Gallery</h4>
             <div class="gallery">
               <div class="gallery-slot">Image / video</div>
@@ -66,9 +66,9 @@
           <div class="card-body">
             <div class="tags"><span class="tag">p5.js</span><span class="tag">Tiles</span><span class="tag">PCG</span></div>
             <h3>Procedural Tileset</h3>
-            <p>Generative island / biome tilemaps with refreshable layouts — also playable in Live Toys.</p>
+            <p>Generative island / biome tilemaps with refreshable layouts.</p>
             <div class="card-actions">
-              <a class="btn btn-sm btn-primary" href="../toys/index.html">Play in Live Toys</a>
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
               <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
           </div>
@@ -86,15 +86,68 @@
           </div>
         </article>
 
+        <!-- Animal World -->
+        <article class="card">
+          <div class="card-media"><div class="ph">Add still / clip</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">p5.js</span><span class="tag">World</span><span class="tag">PCG</span></div>
+            <h3>Animal World</h3>
+            <p>Isometric playfield that expands from the center — hunt animals, avoid packs, chase a score goal.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
+            </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>A soft hunting / survival loop on a hashed procedural board. Tiles reveal outward from the middle in square rings so the whole field fills in.</p>
+            <h4>Technical</h4>
+            <p>XXHash-seeded spawns, animal levels/movement toward the player, tree blockers, and local sprite assets. Camera tracks the player each frame.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Flappy Bird Clone -->
+        <article class="card">
+          <div class="card-media"><div class="ph">Add still / clip</div></div>
+          <div class="card-body">
+            <div class="tags"><span class="tag">Phaser</span><span class="tag">Game</span></div>
+            <h3>Flappy Bird Clone</h3>
+            <p>Tap to flap — pipes with randomised spacing, difficulty ramps, and late-game rockets.</p>
+            <div class="card-actions">
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
+              <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/flapyBirdClone-Extra" target="_blank" rel="noopener">Repo</a>
+              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
+            </div>
+          </div>
+          <div class="card-detail">
+            <h4>About</h4>
+            <p>A Flappy-style endless flyer with score levels, moving pipes, and rocket hazards. Built as a compact playable mini.</p>
+            <h4>Technical</h4>
+            <p>Phaser 3, custom graphics, Web Audio beeps. Pipe gaps use distance-based spawn: minimum spacing matches the original pace, randomised up to 2× for variety.</p>
+            <h4>Gallery</h4>
+            <div class="gallery">
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+              <div class="gallery-slot">Image / video</div>
+            </div>
+          </div>
+        </article>
+
         <!-- Evolutionary Fish Tank -->
         <article class="card">
           <div class="card-media"><div class="ph">Add still / clip</div></div>
           <div class="card-body">
             <div class="tags"><span class="tag">JavaScript</span><span class="tag">Simulation</span><span class="tag">AI</span></div>
             <h3>Evolutionary Fish Tank</h3>
-            <p>Browser fish tank where populations adapt through natural selection over time. A meditative living system.</p>
+            <p>Browser fish tank where populations adapt through natural selection over time.</p>
             <div class="card-actions">
-              <a class="btn btn-sm btn-primary" href="../games/index.html">Play</a>
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
               <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/EvolutionaryFishTankFork" target="_blank" rel="noopener">Repo</a>
               <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
@@ -119,71 +172,18 @@
           <div class="card-body">
             <div class="tags"><span class="tag">Web</span><span class="tag">Action</span><span class="tag">Game</span></div>
             <h3>Good Game</h3>
-            <p>Compact top-down action game — WASD to move, F to shoot, Space to dash. A focused prototype with snappy controls.</p>
+            <p>Compact top-down action game — WASD to move, F to shoot, Space to dash.</p>
             <div class="card-actions">
-              <a class="btn btn-sm btn-primary" href="../games/index.html">Play</a>
+              <a class="btn btn-sm btn-primary" href="../games/index.html">Play →</a>
               <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/goodGame" target="_blank" rel="noopener">Repo</a>
               <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
             </div>
           </div>
           <div class="card-detail">
             <h4>About</h4>
-            <p>A simple top-down Pathfinder-style action game. Move with WASD, shoot with F, and dash with Space. A quick prototype focusing on responsive feel.</p>
+            <p>A simple top-down Pathfinder-style action game with responsive feel — move, shoot, and dash across the field.</p>
             <h4>Technical</h4>
             <p>Web-based, simple game loop with input handling and dash mechanics.</p>
-            <h4>Gallery</h4>
-            <div class="gallery">
-              <div class="gallery-slot">Image / video</div>
-              <div class="gallery-slot">Image / video</div>
-              <div class="gallery-slot">Image / video</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Flappy Bird Clone -->
-        <article class="card">
-          <div class="card-media"><div class="ph">Add still / clip</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">Phaser</span><span class="tag">Game</span></div>
-            <h3>Flappy Bird Clone</h3>
-            <p>Tap to flap — pipes with randomised spacing, difficulty ramps, and late-game rockets.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-primary" href="../games/index.html">Play in Web Games</a>
-              <a class="btn btn-sm btn-ghost" href="https://github.com/UtkuEfeAyan/flapyBirdClone-Extra" target="_blank" rel="noopener">Repo</a>
-              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
-            </div>
-          </div>
-          <div class="card-detail">
-            <h4>About</h4>
-            <p>A Flappy-style endless flyer with score levels, moving pipes, and rocket hazards. Built as a compact playable mini.</p>
-            <h4>Technical</h4>
-            <p>Phaser 3, custom graphics, Web Audio beeps. Pipe gaps use distance-based spawn: minimum spacing matches the original pace, randomised up to 2× for variety. First pipes appear near the bird so wide screens don't wait.</p>
-            <h4>Gallery</h4>
-            <div class="gallery">
-              <div class="gallery-slot">Image / video</div>
-              <div class="gallery-slot">Image / video</div>
-              <div class="gallery-slot">Image / video</div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Animal World -->
-        <article class="card">
-          <div class="card-media"><div class="ph">Add still / clip</div></div>
-          <div class="card-body">
-            <div class="tags"><span class="tag">p5.js</span><span class="tag">World</span><span class="tag">PCG</span></div>
-            <h3>Animal World</h3>
-            <p>Isometric playfield that expands from the center; hunt animals, avoid packs, chase a score goal.</p>
-            <div class="card-actions">
-              <a class="btn btn-sm btn-ghost" href="cmpm147/experiment4/index.html" target="_blank" rel="noopener">Preview</a>
-              <button class="btn btn-sm btn-ghost" type="button" data-detail-toggle aria-expanded="false">Details</button>
-            </div>
-          </div>
-          <div class="card-detail">
-            <h4>About</h4>
-            <p>A soft hunting / survival loop on a hashed procedural board. Tiles reveal outward from the middle in square rings so the whole field fills in.</p>
-            <h4>Technical</h4>
-            <p>XXHash-seeded spawns, animal levels/movement toward the player, tree blockers, and local sprite assets. Camera tracks the player each frame.</p>
             <h4>Gallery</h4>
             <div class="gallery">
               <div class="gallery-slot">Image / video</div>
@@ -196,18 +196,6 @@
       </div>
     </section>
   </main>
-
-  <!-- External-link warning modal -->
-  <div id="ext-warn" class="ext-warn" hidden aria-modal="true" role="dialog">
-    <div class="ext-warn-box">
-      <p class="ext-warn-title">Leaving Portfolio</p>
-      <p class="ext-warn-body">You're about to open an external site in a new tab.</p>
-      <div class="ext-warn-actions">
-        <button class="btn btn-primary" id="ext-warn-confirm" type="button">Continue</button>
-        <button class="btn btn-ghost" id="ext-warn-cancel" type="button">Cancel</button>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container">

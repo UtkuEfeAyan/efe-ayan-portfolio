@@ -93,3 +93,21 @@ canvas {
   opacity: 0;
   pointer-events: none;
 }
+.back-btn {
+  font-family: monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: #00f2fe;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  background: rgba(11,13,16,0.88);
+  border: 1px solid rgba(0,242,254,0.45);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: 0.2s;
+  position: relative;
+  z-index: 10;
+}
+.back-btn:hover {
+  background: rgba(0,242,254,0.12);
+}

@@ -495,6 +495,27 @@ h3 { font-size: 1.05rem; }
   }
 }
 
+/* External game placeholder card */
+.ext-game-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.ext-game-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 48ch;
+}
+.ext-game-note strong { color: var(--text); }
+
 /* External-link warning modal */
 .ext-warn {
   position: fixed;
