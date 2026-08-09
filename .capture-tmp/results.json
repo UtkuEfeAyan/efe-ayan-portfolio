@@ -1,0 +1,62 @@
+[
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\flappy\\play-01.png",
+    "bytes": 23103,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\flappy\\play-02.png",
+    "bytes": 23103,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\flappy\\play-03.png",
+    "bytes": 23103,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\animal-world\\play-01.png",
+    "bytes": 144320,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\animal-world\\play-02.png",
+    "bytes": 153880,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\animal-world\\play-03.png",
+    "bytes": 158877,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\tileset\\map-02.png",
+    "bytes": 51083,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\tileset\\map-03.png",
+    "bytes": 51286,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\voices\\ui-01.png",
+    "bytes": 122266,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\voices\\lang-01.png",
+    "bytes": 127477,
+    "ok": true
+  },
+  {
+    "path": "C:\\Users\\utkue\\efe-ayan-portfolio\\assets\\gallery\\voices\\lang-02.png",
+    "bytes": 128627,
+    "ok": true
+  },
+  {
+    "path": "circles",
+    "ok": false,
+    "error": "Navigation timeout of 60000 ms exceeded"
+  }
+]

@@ -16,6 +16,7 @@
         <a href="../about/index.html">About Me</a>
         <a href="../projects/index.html">Projects</a>
         <a href="../minis/index.html">Minis</a>
+        <a href="../games/index.html">Web Games</a>
         <a class="active" href="index.html">Live Toys</a>
         <a href="../contact/index.html">Contact</a>
       </nav>
@@ -27,14 +28,16 @@
       <p class="eyebrow">Interactive</p>
       <h1>Live Toys</h1>
       <p class="lead" style="margin-top:0.75rem;">
-        Playable browser tools — pick a toy below. Drop more inspiration images into the circle generator anytime.
+        Browser tools you can use right now. Pick a toy below.
       </p>
       <div class="toy-tabs" role="tablist" aria-label="Live toys">
         <button class="toy-tab active" type="button" data-toy="void" role="tab" aria-selected="true">Language Generator</button>
+        <button class="toy-tab" type="button" data-toy="map" role="tab" aria-selected="false">Map Generator</button>
         <button class="toy-tab" type="button" data-toy="circles" role="tab" aria-selected="false">Circle Image Generator</button>
       </div>
     </section>
 
+    <!-- Language Generator -->
     <section class="section" style="padding-top:0; padding-bottom:2rem;" id="toy-void" data-toy-panel="void">
       <div class="container-wide">
         <p class="toy-blurb">
@@ -55,6 +58,27 @@
       </div>
     </section>
 
+    <!-- Map Generator -->
+    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;" id="toy-map" data-toy-panel="map" hidden>
+      <div class="container-wide">
+        <p class="toy-blurb">
+          <strong>Procedural Tileset</strong> — generative island / biome tilemaps. Hit Refresh to generate a new map, Fullscreen to expand.
+        </p>
+        <div class="toy-actions">
+          <a class="btn btn-primary" href="../minis/cmpm147/experiment3/index.html" target="_blank" rel="noopener">Open fullscreen</a>
+          <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Source repo</a>
+        </div>
+        <div class="toy-embed">
+          <iframe
+            title="Procedural Tileset — Map Generator"
+            src="../minis/cmpm147/experiment3/index.html"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Circle Image Generator -->
     <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;" id="toy-circles" data-toy-panel="circles" hidden>
       <div class="container-wide">
         <p class="toy-blurb">

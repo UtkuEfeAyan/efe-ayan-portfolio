@@ -18,7 +18,6 @@ let maxTotalCircles = 20000;
 let minAlphaTransparency = 60;
 let maxAlphaTransparency = 180;
 
-const HARD_MAX_CIRCLES = 30000;
 let lastMemoMs = 0;
 let mutationCount = 0;
 
@@ -48,14 +47,12 @@ function inspirationChanged(nextInspiration) {
 
 function updateReferencePanel() {
   const host = document.getElementById("reference");
-  if (!host || !currentInspiration?.image) return;
+  if (!host || !currentInspiration || !currentInspiration.image) return;
   host.innerHTML = "";
   const img = document.createElement("img");
   img.className = "reference-img";
   img.alt = currentInspiration.name + " — original";
   img.src = currentInspiration.assetUrl;
-  img.width = width;
-  img.height = height;
   host.appendChild(img);
 }
 
@@ -66,12 +63,16 @@ function captureInspirationPixels() {
 }
 
 function setup() {
+  const activeEl = document.getElementById("active");
+  if (activeEl) activeEl.innerHTML = "";
   pixelDensity(1);
   currentCanvas = createCanvas(320, 240);
-  currentCanvas.parent(document.getElementById("active"));
+  currentCanvas.parent(activeEl);
   currentScore = Number.NEGATIVE_INFINITY;
   currentDesign = initDesign(currentInspiration);
   bestDesign = currentDesign;
+  currentCanvas.canvas.style.width = '100%';
+  currentCanvas.canvas.style.height = 'auto';
   captureInspirationPixels();
   updateReferencePanel();
   background(32);
@@ -177,7 +178,7 @@ window.addEventListener("DOMContentLoaded", () => {
   };
   maxCirclesInput.oninput = () => {
     maxTotalCircles = Math.min(
-      HARD_MAX_CIRCLES,
+      typeof HARD_MAX_CIRCLES !== "undefined" ? HARD_MAX_CIRCLES : 30000,
       Math.max(100, parseInt(maxCirclesInput.value, 10) || 100)
     );
     maxCirclesInput.value = maxTotalCircles;

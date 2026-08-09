@@ -176,14 +176,15 @@ canvas {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.85rem;
-  min-height: 0;
+  min-height: 420px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: auto;
 }
 .compare-stack {
-  width: min(100%, 640px);
+  width: 100%;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -210,13 +211,20 @@ canvas {
   border: 1px solid rgba(0, 242, 254, 0.2);
   border-radius: 8px;
   overflow: hidden;
+  min-height: 160px;
 }
-#active canvas,
+#active canvas {
+  display: block;
+  max-width: 100%;
+  border: 0;
+  border-radius: 0;
+}
 #reference .reference-img {
   display: block;
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto;
   max-width: 100%;
+  object-fit: contain;
   border: 0;
   border-radius: 0;
 }
@@ -228,6 +236,23 @@ canvas {
   margin: 2px;
   border-radius: 4px;
   border: 1px solid rgba(127, 0, 255, 0.35);
+}
+
+.back-btn {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--cyan);
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 242, 254, 0.08);
+  transition: 0.2s;
+}
+.back-btn:hover {
+  background: rgba(0, 242, 254, 0.18);
+  box-shadow: 0 0 14px rgba(0, 242, 254, 0.3);
 }
 
 @media (max-width: 900px) {

@@ -1,5 +1,7 @@
-/* Shared navigation + contact form helpers */
+/* Shared navigation, contact form, and external-link warning helpers */
 (function () {
+
+  /* ── Nav toggle (mobile) ── */
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
@@ -12,6 +14,7 @@
     });
   }
 
+  /* ── Contact form ── */
   const form = document.querySelector('#contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -35,6 +38,7 @@
     });
   }
 
+  /* ── Card detail toggles ── */
   document.querySelectorAll('[data-detail-toggle]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card');
@@ -44,4 +48,35 @@
       btn.textContent = open ? 'Hide details' : 'Details';
     });
   });
+
+  /* ── External-link warning modal ──
+     Any <a> or <button> with data-external-warn will trigger the modal.
+     For <a> use href; for <button> use data-href.
+  ── */
+  const extWarn = document.getElementById('ext-warn');
+  const extConfirm = document.getElementById('ext-warn-confirm');
+  const extCancel = document.getElementById('ext-warn-cancel');
+  if (extWarn && extConfirm && extCancel) {
+    let pendingUrl = '';
+    document.querySelectorAll('[data-external-warn]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        pendingUrl = el.getAttribute('href') || el.dataset.href || '';
+        extWarn.hidden = false;
+      });
+    });
+    extConfirm.addEventListener('click', () => {
+      extWarn.hidden = true;
+      if (pendingUrl) window.open(pendingUrl, '_blank', 'noopener');
+      pendingUrl = '';
+    });
+    extCancel.addEventListener('click', () => {
+      extWarn.hidden = true;
+      pendingUrl = '';
+    });
+    extWarn.addEventListener('click', (e) => {
+      if (e.target === extWarn) { extWarn.hidden = true; pendingUrl = ''; }
+    });
+  }
+
 })();
