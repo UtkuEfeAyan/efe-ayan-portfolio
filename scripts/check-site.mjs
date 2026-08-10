@@ -22,6 +22,13 @@ const required = [
   "minis/cmpm147/experiment4/img/human-red.png",
   "minis/cmpm147/experiment5/experiment_5b/index.html",
   "minis/cmpm147/experiment5/experiment_5a/assets/lunch-on-a-skyscraper.jpg",
+  "minis/flappy-bird/index.html",
+  "minis/flappy-bird/game.js",
+  "minis/fish-tank/index.html",
+  "minis/day-of-reckoning/index.html",
+  "minis/day-of-reckoning/js/player.js",
+  "minis/day-of-reckoning/assets/DayOfReckoning.ink",
+  "minis/day-of-reckoning/assets/DeadCity.ink",
   ".nojekyll",
 ];
 

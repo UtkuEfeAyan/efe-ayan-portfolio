@@ -13,10 +13,14 @@ let activeAnimals = {}; // animalID -> {i, j, level}
 let [tw, th] = [p3_tileWidth(), p3_tileHeight()];
 let worldSeed;
 let gameWon = false;
+let scoreSubmitted = false;
 
-const WINNIG_SCORE= 10000; // Winner Score
-const MAX_ACTIVE_ANIMALS = 200; //  others will not move
-const BOARD_SIZE = 20;
+let scoreGoal = 10000; // Adjustable win-condition score, see p3_setScoreGoal
+const MAX_ACTIVE_ANIMALS = 400; //  others will not move
+const LOCAL_SCATTER = 20; // Radius used for respawn scatter around the player
+const SPAWN_RADIUS = 18; // Keep topping up animals within this many tiles of the player
+const CULL_RADIUS = 40; // Animals farther than this from the player are forgotten
+const WORLD_HALF = 1000000; // Effectively unbounded, the world keeps revealing forever
 const SAFE_RADIUS = 7; // 5-tile radius nothing around Player
 const animals = [
   "chicken",
@@ -90,12 +94,15 @@ function p3_tileHeight() {
 }
 
 function isOnBoard(i, j) {
-  // Full board: expand from center in square rings (Chebyshev distance)
-  const half = Math.floor(BOARD_SIZE / 2);
-  if (i < -half || i > half || j < -half || j > half) return false;
+  // World expands from center in square rings (Chebyshev distance), forever.
+  if (i < -WORLD_HALF || i > WORLD_HALF || j < -WORLD_HALF || j > WORLD_HALF) return false;
   const ring = Math.max(Math.abs(i), Math.abs(j));
   const revealed = Math.floor(millis() / 180);
   return ring <= revealed;
+}
+
+function chebyshevDistance(ai, aj, bi, bj) {
+  return Math.max(Math.abs(ai - bi), Math.abs(aj - bj));
 }
 
 function isInPlay(i, j) {
@@ -130,24 +137,123 @@ function p3_worldKeyChanged(key) {
   camera_offset.y = height / 2 - 2 * th;
 
   activeAnimals = {}; // reset animals at start!
+  gameWon = false;
+  scoreSubmitted = false;
 
-  // Spawn animals at random places initially
-  for (let i = -BOARD_SIZE; i <= BOARD_SIZE; i++) {
-    for (let j = -BOARD_SIZE; j <= BOARD_SIZE; j++) {
-      if (hasAnimal(i, j)) {
-        if (Math.abs(i) > SAFE_RADIUS || Math.abs(j) > SAFE_RADIUS) {
-          const id = i + "," + j;
-          activeAnimals[id] = {
-            i: i,
-            j: j,
-            type: getAnimal(i, j),
-            level: getAnimalLevel(i, j),
-          };
-        }
-      }
+  // Animals are topped up continuously around the player (see topUpAnimalsNearPlayer),
+  // so the world never runs out no matter how far you wander.
+  topUpAnimalsNearPlayer();
+}
+
+function p3_setScoreGoal(value) {
+  scoreGoal = Math.max(100, Math.floor(value));
+}
+
+function p3_getScoreGoal() {
+  return scoreGoal;
+}
+
+// Keeps a steady population of animals within SPAWN_RADIUS of the player,
+// and forgets ones that have drifted far behind so memory/CPU stay bounded
+// even during a very long, effectively infinite session.
+function topUpAnimalsNearPlayer() {
+  for (let i = player.i - SPAWN_RADIUS; i <= player.i + SPAWN_RADIUS; i++) {
+    for (let j = player.j - SPAWN_RADIUS; j <= player.j + SPAWN_RADIUS; j++) {
+      if (Math.abs(i) <= SAFE_RADIUS && Math.abs(j) <= SAFE_RADIUS) continue;
+      if (!isOnBoard(i, j) || !hasAnimal(i, j) || isTree(i, j)) continue;
+      const id = i + "," + j;
+      if (activeAnimals[id] || captureLocations[id]) continue;
+      activeAnimals[id] = {
+        i: i,
+        j: j,
+        type: getAnimal(i, j),
+        level: getAnimalLevel(i, j),
+      };
+    }
+  }
+
+  for (let id in activeAnimals) {
+    const animal = activeAnimals[id];
+    if (chebyshevDistance(animal.i, animal.j, player.i, player.j) > CULL_RADIUS) {
+      delete activeAnimals[id];
     }
   }
 }
+
+const LEADERBOARD_KEY = "animalWorldLeaderboard";
+
+function loadLeaderboard() {
+  try {
+    const raw = localStorage.getItem(LEADERBOARD_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveLeaderboard(list) {
+  try {
+    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(list));
+  } catch (e) {
+    // localStorage unavailable, ignore
+  }
+}
+
+function submitScore(score) {
+  if (!score) return;
+  const list = loadLeaderboard();
+  list.push({ score: score, date: new Date().toISOString() });
+  list.sort((a, b) => b.score - a.score);
+  saveLeaderboard(list.slice(0, 10));
+  renderLeaderboard();
+}
+
+function renderLeaderboard() {
+  const listEl = document.getElementById("leaderboard-list");
+  if (!listEl) return;
+  const list = loadLeaderboard();
+  listEl.innerHTML = "";
+  if (list.length === 0) {
+    const li = document.createElement("li");
+    li.className = "lb-empty";
+    li.textContent = "No scores yet, go hunt something.";
+    listEl.appendChild(li);
+    return;
+  }
+  list.forEach((entry, index) => {
+    const li = document.createElement("li");
+    const date = new Date(entry.date);
+    const dateStr = Number.isNaN(date.getTime()) ? "" : date.toLocaleDateString();
+    const rank = document.createElement("span");
+    rank.textContent = "#" + (index + 1);
+    const scoreSpan = document.createElement("span");
+    scoreSpan.textContent = entry.score;
+    const dateSpan = document.createElement("span");
+    dateSpan.textContent = dateStr;
+    li.appendChild(rank);
+    li.appendChild(scoreSpan);
+    li.appendChild(dateSpan);
+    listEl.appendChild(li);
+  });
+}
+
+function maybeSubmitScore() {
+  if ((player.dead || gameWon) && !scoreSubmitted) {
+    scoreSubmitted = true;
+    submitScore(player.score);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderLeaderboard();
+  const clearBtn = document.getElementById("leaderboard-clear");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      saveLeaderboard([]);
+      renderLeaderboard();
+    });
+  }
+});
 
 function p3_drawBefore() {
   background(240);
@@ -198,14 +304,15 @@ function p3_clickKillAnimal(i, j) {
     activeAnimals[id].blowingUpBlue = 20;
     player.score += activeAnimals[id].level;
 
-    // Schedule new animal spawn after 2 seconds
+    // Schedule new animal spawn after 2 seconds, scattered near the player
+    // so it always lands somewhere reachable, however far you've wandered.
     setTimeout(() => {
       let newI, newJ, newId;
       let attempts = 0;
 
       do {
-        newI = Math.floor(random(-BOARD_SIZE, BOARD_SIZE));
-        newJ = Math.floor(random(-BOARD_SIZE, BOARD_SIZE));
+        newI = player.i + Math.floor(random(-LOCAL_SCATTER, LOCAL_SCATTER));
+        newJ = player.j + Math.floor(random(-LOCAL_SCATTER, LOCAL_SCATTER));
         newId = newI + "," + newJ;
         attempts++;
       } while (
@@ -232,10 +339,7 @@ function p3_clickKillAnimal(i, j) {
 
 // Add this at the top with other global variables
 let frameCount = 0;
-
-function p3_drawAfter() {
-  frameCount++;
-}
+let lastSpawnCheckTime = 0;
 
 function p3_drawTile(i, j) {
   if (!isOnBoard(i, j)) return;
@@ -335,7 +439,7 @@ function p3_drawTile(i, j) {
     noStroke();
     textAlign(CENTER, BOTTOM);
 
-    if (player.score > WINNIG_SCORE) {
+    if (player.score > scoreGoal) {
       if (!gameWon) {
         gameWon = true;
         activeAnimals = {};
@@ -345,7 +449,7 @@ function p3_drawTile(i, j) {
 
       fill(255, 215, 0);
       textSize(18);
-      text("🏆 WIN! SCORE: " + player.score, 10, -th * 2.5);
+      text("WIN! SCORE: " + player.score, 10, -th * 2.5);
     } else {
       fill(0);
       textSize(12);
@@ -397,7 +501,7 @@ function applyMove(i, j) {
   if (hasAnimal(i, j) && !captureLocations[id]) {
     const animalLevel = getAnimalLevel(i, j);
 
-    if (player.score > WINNIG_SCORE + 10) {
+    if (player.score > scoreGoal + 10) {
       // Too strong, blocked!
       return;
     } else {
@@ -420,4 +524,13 @@ function p3_drawSelectedTile(i, j) {
   }
 }
 
-function p3_drawAfter() {}
+function p3_drawAfter() {
+  frameCount++;
+
+  if (millis() - lastSpawnCheckTime > 1200) {
+    topUpAnimalsNearPlayer();
+    lastSpawnCheckTime = millis();
+  }
+
+  maybeSubmitScore();
+}

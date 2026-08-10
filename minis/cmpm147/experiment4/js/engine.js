@@ -79,6 +79,23 @@ function setup() {
     rebuildWorld(input.value());
   });
 
+  if (window.p3_setScoreGoal) {
+    let goalLabel = createP();
+    goalLabel.html("Score goal: ");
+    goalLabel.parent("container");
+
+    let goalInput = createInput(String(window.p3_getScoreGoal ? window.p3_getScoreGoal() : 10000), "number");
+    goalInput.parent(goalLabel);
+    goalInput.attribute("min", "100");
+    goalInput.attribute("step", "100");
+    goalInput.input(() => {
+      const value = parseInt(goalInput.value(), 10);
+      if (!Number.isNaN(value) && value > 0) {
+        window.p3_setScoreGoal(value);
+      }
+    });
+  }
+
   rebuildWorld(input.value());
 }
 

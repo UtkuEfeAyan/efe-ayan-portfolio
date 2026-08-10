@@ -1,0 +1,163 @@
+[
+  {
+    "speed": 2.5,
+    "finSize": 20,
+    "size": 25,
+    "color": [255, 100, 100],
+
+    "aggression": 0.2,
+    "lifespan": 100,
+    "salinityPreference": 80,
+    "salinityTolerance": 20
+  },
+  {
+    "speed": 1.2,
+    "finSize": 12,
+    "size": 45,
+    "color": [100, 200, 255],
+    "aggression": 0.8,
+    "lifespan": 200,
+    "salinityPreference": 30,
+    "salinityTolerance": 30
+  },
+  {
+    "speed": 2.7,
+    "finSize": 18,
+    "size": 22,
+    "color": [200, 255, 100],
+    "aggression": 0.5,
+    "lifespan": 120,
+    "salinityPreference": 0,
+    "salinityTolerance": 40
+  },
+  {
+    "speed": 2.3,
+    "finSize": 19,
+    "size": 28,
+    "color": [255, 150, 50],
+    "aggression": 0.3,
+    "lifespan": 110,
+    "salinityPreference": 100,
+    "salinityTolerance": 40
+  },
+  {
+    "speed": 1.5,
+    "finSize": 15,
+    "size": 40,
+    "color": [80, 180, 220],
+    "aggression": 0.7,
+    "lifespan": 180,
+    "salinityPreference": 50,
+    "salinityTolerance": 25
+  },
+  {
+    "speed": 2.0,
+    "finSize": 17,
+    "size": 30,
+    "color": [220, 100, 220],
+    "aggression": 0.4,
+    "lifespan": 150,
+    "salinityPreference": 80,
+    "salinityTolerance": 15
+  },
+  {
+    "speed": 2.8,
+    "finSize": 22,
+    "size": 20,
+    "color": [100, 255, 150],
+    "aggression": 0.6,
+    "lifespan": 90,
+    "salinityPreference": 35,
+    "salinityTolerance": 10
+  },
+  {
+    "speed": 1.0,
+    "finSize": 10,
+    "size": 50,
+    "color": [50, 100, 255],
+    "aggression": 0.9,
+    "lifespan": 2200,
+    "salinityPreference": 80,
+    "salinityTolerance": 25
+  },
+  {
+    "speed": 2.5,
+    "finSize": 20,
+    "size": 25,
+    "color": [255, 100, 100],
+    "aggression": 0.2,
+    "lifespan": 100,
+    "salinityPreference": 75,
+    "salinityTolerance": 10
+  },
+  {
+    "speed": 1.2,
+    "finSize": 12,
+    "size": 45,
+    "color": [100, 200, 255],
+    "aggression": 0.8,
+    "lifespan": 200,
+    "salinityPreference": 0,
+    "salinityTolerance": 35
+  },
+  {
+    "speed": 2.7,
+    "finSize": 18,
+    "size": 22,
+    "color": [200, 255, 100],
+    "aggression": 0.5,
+    "lifespan": 120,
+    "salinityPreference": 50,
+    "salinityTolerance": 25
+  },
+  {
+    "speed": 2.3,
+    "finSize": 19,
+    "size": 28,
+    "color": [255, 150, 50],
+    "aggression": 0.3,
+    "lifespan": 110,
+    "salinityPreference": 20,
+    "salinityTolerance": 55
+  },
+  {
+    "speed": 1.5,
+    "finSize": 15,
+    "size": 40,
+    "color": [80, 180, 220],
+    "aggression": 0.7,
+    "lifespan": 180,
+    "salinityPreference": 80,
+    "salinityTolerance": 45
+  },
+  {
+    "speed": 2.0,
+    "finSize": 17,
+    "size": 30,
+    "color": [220, 100, 220],
+    "aggression": 0.4,
+    "lifespan": 150,
+    "salinityPreference": 100,
+    "salinityTolerance": 50
+  },
+  {
+    "speed": 2.8,
+    "finSize": 22,
+    "size": 20,
+    "color": [100, 255, 150],
+    "aggression": 0.6,
+    "lifespan": 90,
+    "salinityPreference": 65,
+    "salinityTolerance": 10
+  },
+  {
+    "speed": 1.0,
+    "finSize": 10,
+    "size": 50,
+    "color": [50, 100, 255],
+    "aggression": 0.9,
+    "lifespan": 220,
+    "salinityPreference": 90,
+    "salinityTolerance": 35
+  }
+]

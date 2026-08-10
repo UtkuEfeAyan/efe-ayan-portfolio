@@ -477,6 +477,11 @@ h3 { font-size: 1.05rem; }
   margin: 0 0 0.25rem;
   max-width: 70ch;
 }
+.toy-note {
+  color: var(--dim);
+  font-size: 0.78rem;
+  margin-top: 0.6rem;
+}
 .toy-blurb code {
   font-family: var(--font-mono);
   font-size: 0.78em;

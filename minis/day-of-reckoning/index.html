@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Day of Reckoning &amp; Dead City</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="ink-app">
+    <header class="ink-header">
+      <div class="ink-title">The Day of Reckoning &amp; Dead City</div>
+      <div class="ink-controls">
+        <label for="story-select">Story</label>
+        <select id="story-select">
+          <option value="reckoning">Game 1: The Day of Reckoning</option>
+          <option value="deadcity">Game 2: Dead City</option>
+        </select>
+        <button id="story-restart" type="button">Restart</button>
+      </div>
+      <span id="story-status" class="ink-status"></span>
+    </header>
+    <div id="story-output" class="ink-output"></div>
+    <div id="story-choices" class="ink-choices"></div>
+  </div>
+  <script src="https://unpkg.com/inkjs@2.4.0/dist/ink-full.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>

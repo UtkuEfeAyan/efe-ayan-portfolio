@@ -99,6 +99,40 @@ function soundScore() { playTone(880, 'sine',     0.14, 0.18); playTone(1100, 's
 
 function soundHit()   { playTone(160, 'sawtooth', 0.35, 0.22); playTone(90, 'square', 0.4, 0.18); }
 
+// ─── Local leaderboard (localStorage, this browser only) ─────────────────────
+
+const LEADERBOARD_KEY = 'flappy_leaderboard';
+
+function loadLeaderboard() {
+  try {
+    const raw = localStorage.getItem(LEADERBOARD_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function submitLeaderboardScore(score) {
+  const list = loadLeaderboard();
+  if (score > 0) {
+    list.push({ score, date: new Date().toISOString() });
+    list.sort((a, b) => b.score - a.score);
+  }
+  const trimmed = list.slice(0, 10);
+  try {
+    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(trimmed));
+  } catch (e) {}
+  return trimmed;
+}
+
+function formatLeaderboard(list) {
+  if (!list.length) return 'No scores yet, be the first!';
+  return list
+    .slice(0, 5)
+    .map((entry, i) => `${i + 1}. ${entry.score}`)
+    .join('    ');
+}
+
 
 
 // ─── Phaser Scene ─────────────────────────────────────────────────────────────
@@ -281,7 +315,7 @@ class GameScene extends Phaser.Scene {
 
     bg.fillStyle(0x000000, 0.52);
 
-    bg.fillRoundedRect(-190, -115, 380, 230, 26);
+    bg.fillRoundedRect(-190, -130, 380, 260, 26);
 
 
 
@@ -307,7 +341,7 @@ class GameScene extends Phaser.Scene {
 
     } else {
 
-      this.goTitle = this.add.text(0, -70, 'GAME OVER', {
+      this.goTitle = this.add.text(0, -85, 'GAME OVER', {
 
         fontFamily: 'Arial Black, Arial', fontSize: '32px',
 
@@ -315,7 +349,7 @@ class GameScene extends Phaser.Scene {
 
       }).setOrigin(0.5);
 
-      this.goScore = this.add.text(0, -22, 'Score: 0', {
+      this.goScore = this.add.text(0, -38, 'Score: 0', {
 
         fontFamily: 'Arial, sans-serif', fontSize: '22px',
 
@@ -323,7 +357,7 @@ class GameScene extends Phaser.Scene {
 
       }).setOrigin(0.5);
 
-      this.goBest = this.add.text(0, 16, 'Best: 0', {
+      this.goBest = this.add.text(0, -2, 'Best: 0', {
 
         fontFamily: 'Arial, sans-serif', fontSize: '19px',
 
@@ -331,7 +365,25 @@ class GameScene extends Phaser.Scene {
 
       }).setOrigin(0.5);
 
-      const restart = this.add.text(0, 66, '▶  Tap to Restart', {
+      this.goLeaderboardLabel = this.add.text(0, 30, 'LEADERBOARD (this browser)', {
+
+        fontFamily: 'Arial, sans-serif', fontSize: '13px',
+
+        color: '#88ddff', stroke: '#000', strokeThickness: 2,
+
+      }).setOrigin(0.5);
+
+      this.goLeaderboard = this.add.text(0, 52, 'No scores yet, be the first!', {
+
+        fontFamily: 'Arial, sans-serif', fontSize: '15px',
+
+        color: '#fff', stroke: '#000', strokeThickness: 3,
+
+        align: 'center', wordWrap: { width: 340 },
+
+      }).setOrigin(0.5);
+
+      const restart = this.add.text(0, 100, '▶  Tap to Restart', {
 
         fontFamily: 'Arial, sans-serif', fontSize: '19px',
 
@@ -339,7 +391,7 @@ class GameScene extends Phaser.Scene {
 
       }).setOrigin(0.5);
 
-      c.add([bg, this.goTitle, this.goScore, this.goBest, restart]);
+      c.add([bg, this.goTitle, this.goScore, this.goBest, this.goLeaderboardLabel, this.goLeaderboard, restart]);
 
     }
 
@@ -799,6 +851,10 @@ class GameScene extends Phaser.Scene {
     this.goScore.setText(`Score: ${this.score}`);
 
     this.goBest.setText(`Best: ${this.bestScore}`);
+
+    const leaderboard = submitLeaderboardScore(this.score);
+
+    this.goLeaderboard.setText(formatLeaderboard(leaderboard));
 
     this.gameOverOverlay.setVisible(true);
 

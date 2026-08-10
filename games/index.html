@@ -32,15 +32,14 @@
       </p>
       <div class="toy-tabs" role="tablist" aria-label="Web games">
         <button class="toy-tab active" type="button" data-toy="flappy"     role="tab" aria-selected="true">Flappy Bird+</button>
-        <button class="toy-tab"        type="button" data-toy="map"        role="tab" aria-selected="false">Map Generator</button>
         <button class="toy-tab"        type="button" data-toy="animal"     role="tab" aria-selected="false">Animal World</button>
-        <button class="toy-tab"        type="button" data-toy="circles"    role="tab" aria-selected="false">Circle Generator</button>
         <button class="toy-tab"        type="button" data-toy="fish"       role="tab" aria-selected="false">Fish Tank</button>
         <button class="toy-tab"        type="button" data-toy="2048"       role="tab" aria-selected="false">2048 Boss Battle</button>
         <button class="toy-tab"        type="button" data-toy="platform"   role="tab" aria-selected="false">Rage Platformer</button>
-        <button class="toy-tab"        type="button" data-toy="goodgame"   role="tab" aria-selected="false">Good Game</button>
-        <button class="toy-tab"        type="button" data-toy="reckoning"  role="tab" aria-selected="false">Day of Reckoning</button>
+        <button class="toy-tab"        type="button" data-toy="dungeon"    role="tab" aria-selected="false">Dungeon Level Design Prototype</button>
+        <button class="toy-tab"        type="button" data-toy="reckoning"  role="tab" aria-selected="false">Day of Reckoning &amp; Dead City</button>
       </div>
+      <p class="toy-note">Map Generator and Circle Generator have moved to <a href="../toys/index.html" style="color:var(--cyan)">Live Toys</a>.</p>
     </section>
 
     <!-- ─── Flappy Bird+ ─── -->
@@ -54,21 +53,6 @@
         </div>
         <div class="toy-embed">
           <iframe title="Flappy Bird+" src="../minis/flappy-bird/index.html" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Map Generator ─── -->
-    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
-             id="toy-map" data-toy-panel="map" hidden>
-      <div class="container-wide">
-        <p class="toy-blurb"><strong>Map Generator</strong>: Procedural island / biome tilemap. Hit Refresh inside the game to generate a new world.</p>
-        <div class="toy-actions">
-          <a class="btn btn-primary" href="../minis/cmpm147/experiment3/index.html" target="_blank" rel="noopener">Open fullscreen ↗</a>
-          <a class="btn btn-ghost"   href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Source repo</a>
-        </div>
-        <div class="toy-embed">
-          <iframe title="Map Generator" src="../minis/cmpm147/experiment3/index.html" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -88,36 +72,17 @@
       </div>
     </section>
 
-    <!-- ─── Circle Image Generator ─── -->
-    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
-             id="toy-circles" data-toy-panel="circles" hidden>
-      <div class="container-wide">
-        <p class="toy-blurb"><strong>Circle Image Generator</strong>: Pick an inspiration image and watch colored dots mutate into the picture over time via an evolutionary algorithm.</p>
-        <div class="toy-actions">
-          <a class="btn btn-primary" href="../minis/cmpm147/experiment5/experiment_5b/index.html" target="_blank" rel="noopener">Open fullscreen ↗</a>
-          <a class="btn btn-ghost"   href="https://github.com/UtkuEfeAyan/CMPM_147" target="_blank" rel="noopener">Source repo</a>
-        </div>
-        <div class="toy-embed toy-embed-tall">
-          <iframe title="Circle Image Generator"
-                  src="../minis/cmpm147/experiment5/experiment_5b/index.html"
-                  loading="lazy" allow="clipboard-write"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Evolutionary Fish Tank (external) ─── -->
+    <!-- ─── Evolutionary Fish Tank ─── -->
     <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
              id="toy-fish" data-toy-panel="fish" hidden>
       <div class="container-wide">
         <p class="toy-blurb"><strong>Evolutionary Fish Tank</strong>: Browser fish tank where populations evolve through natural selection in real time.</p>
         <div class="toy-actions">
-          <button type="button" class="btn btn-primary" data-external-warn
-                  data-href="https://utkuefeayan.github.io/EvolutionaryFishTankFork/">Open game ↗</button>
+          <a class="btn btn-primary" href="../minis/fish-tank/index.html" target="_blank" rel="noopener">Open fullscreen ↗</a>
           <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/EvolutionaryFishTankFork" target="_blank" rel="noopener">Source repo</a>
         </div>
-        <div class="ext-game-card">
-          <p class="ext-game-note">This game is hosted on a separate server. Click <strong>Open game ↗</strong> above to play it, you'll see a quick confirmation first.</p>
-          <p class="ext-game-note" style="margin-top:0.5rem;">If GitHub Pages has been set up for this repo, it will also be embeddable here in a future update.</p>
+        <div class="toy-embed">
+          <iframe title="Evolutionary Fish Tank" src="../minis/fish-tank/index.html" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -138,50 +103,47 @@
       </div>
     </section>
 
-    <!-- ─── Game Platform (external) ─── -->
+    <!-- ─── Rage Platformer ─── -->
     <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
              id="toy-platform" data-toy-panel="platform" hidden>
       <div class="container-wide">
         <p class="toy-blurb"><strong>Rage Platformer</strong>: A custom 2D platformer with handcrafted levels and responsive controls.</p>
         <div class="toy-actions">
-          <button type="button" class="btn btn-primary" data-external-warn
-                  data-href="https://utkuefeayan.github.io/gamePlatform/">Open game ↗</button>
+          <a class="btn btn-primary" href="https://utkuefeayan.github.io/gamePlatform/" target="_blank" rel="noopener">Open fullscreen ↗</a>
           <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/gamePlatform" target="_blank" rel="noopener">Source repo</a>
         </div>
-        <div class="ext-game-card">
-          <p class="ext-game-note">This game is hosted on a separate server. Click <strong>Open game ↗</strong> to play it in a new tab.</p>
+        <div class="toy-embed">
+          <iframe title="Rage Platformer" src="https://utkuefeayan.github.io/gamePlatform/" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- ─── Good Game (external) ─── -->
+    <!-- ─── Dungeon Level Design Prototype ─── -->
     <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
-             id="toy-goodgame" data-toy-panel="goodgame" hidden>
+             id="toy-dungeon" data-toy-panel="dungeon" hidden>
       <div class="container-wide">
-        <p class="toy-blurb"><strong>Good Game</strong>: Top-down action prototype. WASD to move, F to shoot, Space to dash.</p>
+        <p class="toy-blurb"><strong>Dungeon Level Design Prototype</strong>: Top-down dungeon-crawler prototype. WASD to move, F to shoot, Space to dash.</p>
         <div class="toy-actions">
-          <button type="button" class="btn btn-primary" data-external-warn
-                  data-href="https://utkuefeayan.github.io/goodGame/">Open game ↗</button>
+          <a class="btn btn-primary" href="https://utkuefeayan.github.io/goodGame/" target="_blank" rel="noopener">Open fullscreen ↗</a>
           <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/goodGame" target="_blank" rel="noopener">Source repo</a>
         </div>
-        <div class="ext-game-card">
-          <p class="ext-game-note">This game is hosted on a separate server. Click <strong>Open game ↗</strong> to play it in a new tab.</p>
+        <div class="toy-embed">
+          <iframe title="Dungeon Level Design Prototype" src="https://utkuefeayan.github.io/goodGame/" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- ─── Day of Reckoning (external) ─── -->
+    <!-- ─── Day of Reckoning & Dead City ─── -->
     <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;"
              id="toy-reckoning" data-toy-panel="reckoning" hidden>
       <div class="container-wide">
-        <p class="toy-blurb"><strong>Day of Reckoning &amp; Dead City</strong>: Branching text adventure duology. Full narrative arcs with real consequences. Part 1 leads directly into Part 2.</p>
+        <p class="toy-blurb"><strong>Day of Reckoning &amp; Dead City</strong>: Branching text adventure duology written in Ink and compiled to run in-browser. Full narrative arcs with real consequences. Part 1 leads directly into Part 2, switch between them with the story picker inside the embed.</p>
         <div class="toy-actions">
-          <button type="button" class="btn btn-primary" data-external-warn
-                  data-href="https://utkuefeayan.github.io/The-Day-of-Reckoning-_and_Dead-City_games-/">Open game ↗</button>
+          <a class="btn btn-primary" href="../minis/day-of-reckoning/index.html" target="_blank" rel="noopener">Open fullscreen ↗</a>
           <a class="btn btn-ghost" href="https://github.com/UtkuEfeAyan/The-Day-of-Reckoning-_and_Dead-City_games-" target="_blank" rel="noopener">Source repo</a>
         </div>
-        <div class="ext-game-card">
-          <p class="ext-game-note">This game is hosted on a separate server. Click <strong>Open game ↗</strong> to play it in a new tab.</p>
+        <div class="toy-embed toy-embed-tall">
+          <iframe title="Day of Reckoning &amp; Dead City" src="../minis/day-of-reckoning/index.html" loading="lazy"></iframe>
         </div>
       </div>
     </section>
