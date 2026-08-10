@@ -31,7 +31,7 @@
       }
 
       const subject = encodeURIComponent(`Portfolio transmission from ${name}`);
-      const body = encodeURIComponent(`${message}\n\n— ${name} <${email}>`);
+      const body = encodeURIComponent(`${message}\n\n- ${name} <${email}>`);
       window.location.href = `mailto:efe.ayan@example.com?subject=${subject}&body=${body}`;
       if (note) note.textContent = 'Opening mail client… Replace email in about page when ready.';
       form.reset();

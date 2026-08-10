@@ -59,7 +59,7 @@ button, input, textarea { font: inherit; color: inherit; }
   z-index: 1;
 }
 
-/* Nav — friend structure, neon skin */
+/* Nav - friend structure, neon skin */
 .site-header {
   position: sticky;
   top: 0;
@@ -163,9 +163,12 @@ h3 { font-size: 1.05rem; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
-  background: linear-gradient(120deg, rgba(0,242,254,.18), rgba(127,0,255,.28));
-  border-color: rgba(0,242,254,.45);
-  box-shadow: var(--glow);
+  background: linear-gradient(120deg, rgba(0,242,254,.22), rgba(127,0,255,.34));
+  border-color: rgba(0,242,254,.55);
+  box-shadow: 0 0 18px rgba(0,242,254,.45), 0 0 34px rgba(127,0,255,.18);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 26px rgba(0,242,254,.65), 0 0 46px rgba(127,0,255,.28);
 }
 .btn-ghost {
   border-color: var(--border-strong);
@@ -177,7 +180,27 @@ h3 { font-size: 1.05rem; }
 }
 .btn-sm { padding: 0.4rem 0.75rem; font-size: 0.68rem; }
 
-/* Home hero — photo + title */
+/* Details toggle gets its own highlighted treatment so it stands out from plain Repo/ghost links */
+.btn[data-detail-toggle] {
+  border-color: rgba(255, 0, 127, 0.5);
+  color: var(--pink);
+  background: rgba(255, 0, 127, 0.06);
+  box-shadow: 0 0 14px rgba(255, 0, 127, 0.18);
+}
+.btn[data-detail-toggle]:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+  background: rgba(255, 0, 127, 0.12);
+  box-shadow: 0 0 22px rgba(255, 0, 127, 0.4);
+}
+.card.open .btn[data-detail-toggle] {
+  color: #0b0d10;
+  background: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 22px rgba(255, 0, 127, 0.45);
+}
+
+/* Home hero - photo + title */
 .home-hero {
   padding: 3.5rem 0 2rem;
   display: grid;

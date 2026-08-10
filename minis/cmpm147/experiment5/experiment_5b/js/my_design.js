@@ -54,7 +54,7 @@ function computeCanvasSize(img) {
   const stage = document.querySelector(".circle-stage");
   const stageW = stage && stage.clientWidth ? stage.clientWidth : 620;
   const availW = Math.max(280, Math.min(620, stageW - 32));
-  // Two stacked panels — keep each image large enough to read as a picture
+  // Two stacked panels, keep each image large enough to read as a picture
   const availH = Math.max(180, Math.min(340, (window.innerHeight - 200) / 2.15));
   const iw = Math.max(1, img.width || 1);
   const ih = Math.max(1, img.height || 1);

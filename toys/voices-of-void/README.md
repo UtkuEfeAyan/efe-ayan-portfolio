@@ -4,7 +4,7 @@
 
 > 🔗 **Live page:** <https://utkuefeayan.github.io/VoicesOfVoid/>
 
-Voices of Void lets you quickly sketch out a fictional language — tweak grammar rules, phonology, and writing-system options, then instantly see sample words, sentences, and a mini-dictionary. It is built for rapid ideation rather than for designing one perfect conlang. No linguistics degree required.
+Voices of Void lets you quickly sketch out a fictional language - tweak grammar rules, phonology, and writing-system options, then instantly see sample words, sentences, and a mini-dictionary. It is built for rapid ideation rather than for designing one perfect conlang. No linguistics degree required.
 
 ---
 
@@ -12,8 +12,8 @@ Voices of Void lets you quickly sketch out a fictional language — tweak gramma
 
 1. [What It Does](#what-it-does)
 2. [Interface Overview](#interface-overview)
-3. [Left Panel — Controls Reference](#left-panel--controls-reference)
-4. [Right Panel — Output Reference](#right-panel--output-reference)
+3. [Left Panel - Controls Reference](#left-panel--controls-reference)
+4. [Right Panel - Output Reference](#right-panel--output-reference)
 5. [ⓘ Info Buttons](#ⓘ-info-buttons)
 6. [Language Presets](#language-presets)
 7. [Keyboard Shortcuts](#keyboard-shortcuts)
@@ -66,7 +66,7 @@ The app is split into two panels:
 
 ---
 
-## Left Panel — Controls Reference
+## Left Panel - Controls Reference
 
 ### Language Presets
 
@@ -110,10 +110,10 @@ A row of quick-select buttons at the top of the left panel. Each preset loads a 
 
 | Control | What It Does |
 |---|---|
-| **System Type** | *Alphabet* — one symbol per sound (like English); *Abjad* — mostly consonants written (like Arabic); *Abugida* — consonant+vowel pairs (like Devanagari); *Featural* — each symbol encodes pronunciation features. Note: the alphabet grid display is currently used for all types. |
-| **Direction** | *Left → Right (LTR)* — standard; *Right → Left (RTL)* — reversed (Eldritch preset uses this); *Top → Bottom (TTB)* — vertical; *Bottom → Top (BTT)* — rare vertical reverse. Direction affects how sample sentences and words are rendered. |
+| **System Type** | *Alphabet* - one symbol per sound (like English); *Abjad* - mostly consonants written (like Arabic); *Abugida* - consonant+vowel pairs (like Devanagari); *Featural* - each symbol encodes pronunciation features. Note: the alphabet grid display is currently used for all types. |
+| **Direction** | *Left → Right (LTR)* - standard; *Right → Left (RTL)* - reversed (Eldritch preset uses this); *Top → Bottom (TTB)* - vertical; *Bottom → Top (BTT)* - rare vertical reverse. Direction affects how sample sentences and words are rendered. |
 
-> ⚠️ **Note:** Script-direction controls are not yet fully perfect — see [Known Limitations](#known-limitations).
+> ⚠️ **Note:** Script-direction controls are not yet fully perfect - see [Known Limitations](#known-limitations).
 
 ---
 
@@ -126,7 +126,7 @@ A row of quick-select buttons at the top of the left panel. Each preset loads a 
 
 ---
 
-## Right Panel — Output Reference
+## Right Panel - Output Reference
 
 ### Language Info Cards
 
@@ -145,9 +145,9 @@ After loading a preset or sending your config, four info cards appear:
 
 Shows how each English letter or digraph maps to a phoneme from your current inventory.
 
-- **Top row** — English letter or combination (B, C, D … CH, SH, TH …)
-- **Bottom row** — Corresponding conlang phoneme
-- **—** (dash) — No phoneme available for that letter
+- **Top row** - English letter or combination (B, C, D … CH, SH, TH …)
+- **Bottom row** - Corresponding conlang phoneme
+- **-** (dash) - No phoneme available for that letter
 
 Use this as a reference when creating custom words.
 
@@ -200,7 +200,7 @@ A categorised word list showing the current lexicon split into:
 
 ## ⓘ Info Buttons
 
-Nearly every control on the left panel — and a few output sections on the right — has a small **ⓘ** button next to its label.
+Nearly every control on the left panel - and a few output sections on the right - has a small **ⓘ** button next to its label.
 
 **Click any ⓘ button** to open a pop-up panel that explains:
 - What the control does
@@ -257,9 +257,9 @@ Each preset is a complete starting configuration. You can load one and then fine
 
 ## Known Limitations
 
-- **Script direction** — RTL, TTB, and BTT directions are partially implemented; display may not be fully correct in all browsers.
-- **Word generation realism** — Generated words follow phonological rules but do not yet achieve the structured, natural feel of real-world languages. Markov-chain approaches were explored but proved incompatible with the rule-based generator, so the current semi-random approach is intentional.
-- **Writing-system rendering** — The alphabet grid always shows an alphabet-style mapping regardless of which writing-system type is selected.
+- **Script direction** - RTL, TTB, and BTT directions are partially implemented; display may not be fully correct in all browsers.
+- **Word generation realism** - Generated words follow phonological rules but do not yet achieve the structured, natural feel of real-world languages. Markov-chain approaches were explored but proved incompatible with the rule-based generator, so the current semi-random approach is intentional.
+- **Writing-system rendering** - The alphabet grid always shows an alphabet-style mapping regardless of which writing-system type is selected.
 
 ---
 
@@ -305,9 +305,9 @@ Each preset is a complete starting configuration. You can load one and then fine
 
 ## Artist Statement
 
-I decided to do this project because of my passion for worldbuilding. I really enjoy exploring different, unique worlds — especially through reading or playing games, since those tend to be more immersive in their world-building. Some of my favourites are Warhammer (both 30k/Horus Heresy and 40k), Bloodborne (as well as Dark Souls and Elden Ring), SCP Containment Breach, Dune, The Witcher, and D&D, among others.
+I decided to do this project because of my passion for worldbuilding. I really enjoy exploring different, unique worlds - especially through reading or playing games, since those tend to be more immersive in their world-building. Some of my favourites are Warhammer (both 30k/Horus Heresy and 40k), Bloodborne (as well as Dark Souls and Elden Ring), SCP Containment Breach, Dune, The Witcher, and D&D, among others.
 
-I love spending hours digging through lore, learning how these worlds fit together. One of my guilty pleasures is watching hours of lore videos on YouTube while I have free time or am doing easy work. I have also played and hosted some D&D campaigns. I enjoy amateur worldbuilding myself, so I wanted to create a tool that I or others who want to enrich their worlds through languages — or who just want to explore languages in a worldbuilding context — could use to ideate, experiment, and quickly sketch out how a fictional language might look, or how a fictional or fantasy creature might sound, without needing to fully master linguistics or spend months building a single conlang for a single idea.
+I love spending hours digging through lore, learning how these worlds fit together. One of my guilty pleasures is watching hours of lore videos on YouTube while I have free time or am doing easy work. I have also played and hosted some D&D campaigns. I enjoy amateur worldbuilding myself, so I wanted to create a tool that I or others who want to enrich their worlds through languages - or who just want to explore languages in a worldbuilding context - could use to ideate, experiment, and quickly sketch out how a fictional language might look, or how a fictional or fantasy creature might sound, without needing to fully master linguistics or spend months building a single conlang for a single idea.
 
 This tool is more focused on rapid ideation rather than trying to design one perfect language. The project builds a flexible language-generation workbench with a dark, sci-fi theme (because I like that kind of aesthetic), where you can tweak grammar settings, phonology, and writing-system options, then instantly see sample words, sentences, and mini-dictionaries. It is part toy, part design tool, and part an excuse for me to dive deeper into the logistics of linguistics and worldbuilding.
 
@@ -319,6 +319,6 @@ This tool is more focused on rapid ideation rather than trying to design one per
 
 I think I bit off more than I could chew with some stuff, especially my original idea of having both a custom glyph generator that would generate unique glyphs for each language. As I started working on it and doing more research on word generation, sentence generation, and conlanging, I realised how complicated things were, so I decided to focus only on the language part rather than glyph generation. I ditched graphic glyph generation entirely and switched to using different pre-made letters and more exotic alphabet-character integration instead of building from zero.
 
-Condensing my efforts helped a lot; however, the UI, `style.css`, and HTML parts took a very long time — especially the HTML, since I am not great at HTML. Even though I ideated using ChatGPT for templates and structure, it could not do exactly what I wanted, so I needed to tweak and fix things a lot, especially for moving parts like the sentence generator and the dictionaries with drop-down menus. I made some cool drop-down selection menus and a good interface, and it became one of the parts I am very proud of, even though they are not perfect.
+Condensing my efforts helped a lot; however, the UI, `style.css`, and HTML parts took a very long time - especially the HTML, since I am not great at HTML. Even though I ideated using ChatGPT for templates and structure, it could not do exactly what I wanted, so I needed to tweak and fix things a lot, especially for moving parts like the sentence generator and the dictionaries with drop-down menus. I made some cool drop-down selection menus and a good interface, and it became one of the parts I am very proud of, even though they are not perfect.
 
-Then there is the generation logic, which I thought would be easy since I had so many rules. It was not. It is a thousand times better than where it started, especially for generating sentences and words and following all the rules (I think). However, it still cannot generate words with the natural, structured feel we see in real languages. I spent a lot of time looking for language-generation logic and algorithms online, but everything I found either used external APIs or logic so complex I had no idea what it was doing — even after watching videos or reading about it. Markov chains were explored, but the easy implementation people used was not compatible with my rule-based logic, and the more advanced approaches were a completely new topic for me. I realised that trying to make them work together with my rule-based system was futile, so I accepted the current level of generation. It is not bad, but not the perfect version I wanted. Still, it works and looks relatively good — and generation was definitely the hardest part.
+Then there is the generation logic, which I thought would be easy since I had so many rules. It was not. It is a thousand times better than where it started, especially for generating sentences and words and following all the rules (I think). However, it still cannot generate words with the natural, structured feel we see in real languages. I spent a lot of time looking for language-generation logic and algorithms online, but everything I found either used external APIs or logic so complex I had no idea what it was doing - even after watching videos or reading about it. Markov chains were explored, but the easy implementation people used was not compatible with my rule-based logic, and the more advanced approaches were a completely new topic for me. I realised that trying to make them work together with my rule-based system was futile, so I accepted the current level of generation. It is not bad, but not the perfect version I wanted. Still, it works and looks relatively good - and generation was definitely the hardest part.

@@ -11,11 +11,11 @@ function clonePreset(preset) {
 
 // Option labels for selects
 const WORD_ORDER_OPTIONS = [
-  { value: "svo", label: "SVO — subject–verb–object" },
-  { value: "sov", label: "SOV — subject–object–verb" },
-  { value: "vso", label: "VSO — verb–subject–object" },
-  { value: "osv", label: "OSV — object–subject–verb" },
-  { value: "ovs", label: "OVS — object–verb–subject" }
+  { value: "svo", label: "SVO - subject–verb–object" },
+  { value: "sov", label: "SOV - subject–object–verb" },
+  { value: "vso", label: "VSO - verb–subject–object" },
+  { value: "osv", label: "OSV - object–subject–verb" },
+  { value: "ovs", label: "OVS - object–verb–subject" }
 ];
 
 const WRITING_SYSTEM_OPTIONS = [
@@ -86,7 +86,7 @@ function refreshSummary() {
       : cfg.phonology?.vowels || "";
     
     dom.metaPhonology.innerHTML = [
-      `<div class="meta-line">${cfg.grammar?.wordOrder || "svo"} — verb–subject–object</div>`,
+      `<div class="meta-line">${cfg.grammar?.wordOrder || "svo"} - verb–subject–object</div>`,
       `<div class="meta-line">Syllables: ${cfg.grammar?.syllablePattern || "cvc"}</div>`,
       `<div class="meta-line">max syllables per word: ${cfg.grammar?.maxSyllables || 4}.</div>`
     ].join("");
@@ -344,11 +344,11 @@ const TOOLTIP_INFO = {
       <p>Word order defines how subject (S), verb (V), and object (O) are arranged in sentences.</p>
       <h3>Common Orders:</h3>
       <ul>
-        <li><code>SVO</code> — Subject-Verb-Object (e.g., "hunter sees wolf")</li>
-        <li><code>SOV</code> — Subject-Object-Verb (e.g., "hunter wolf sees")</li>
-        <li><code>VSO</code> — Verb-Subject-Object (e.g., "sees hunter wolf")</li>
-        <li><code>OSV</code> — Object-Subject-Verb (e.g., "wolf hunter sees")</li>
-        <li><code>OVS</code> — Object-Verb-Subject (e.g., "wolf sees hunter")</li>
+        <li><code>SVO</code> - Subject-Verb-Object (e.g., "hunter sees wolf")</li>
+        <li><code>SOV</code> - Subject-Object-Verb (e.g., "hunter wolf sees")</li>
+        <li><code>VSO</code> - Verb-Subject-Object (e.g., "sees hunter wolf")</li>
+        <li><code>OSV</code> - Object-Subject-Verb (e.g., "wolf hunter sees")</li>
+        <li><code>OVS</code> - Object-Verb-Subject (e.g., "wolf sees hunter")</li>
       </ul>
       <p><strong>Effect:</strong> Changes how your language structures basic sentences.</p>
     `
@@ -420,10 +420,10 @@ const TOOLTIP_INFO = {
       <p>Defines how sounds are represented in writing.</p>
       <h3>Systems:</h3>
       <ul>
-        <li><code>Alphabet</code> — One symbol per sound (e.g., English)</li>
-        <li><code>Abjad</code> — Mostly consonants written (e.g., Arabic)</li>
-        <li><code>Abugida</code> — Consonant+vowel pairs (e.g., Devanagari)</li>
-        <li><code>Featural</code> — Each symbol shows pronunciation features</li>
+        <li><code>Alphabet</code> - One symbol per sound (e.g., English)</li>
+        <li><code>Abjad</code> - Mostly consonants written (e.g., Arabic)</li>
+        <li><code>Abugida</code> - Consonant+vowel pairs (e.g., Devanagari)</li>
+        <li><code>Featural</code> - Each symbol shows pronunciation features</li>
       </ul>
       <p><strong>Note:</strong> Currently displays alphabet mappings. Other systems shown for reference.</p>
     `
@@ -434,10 +434,10 @@ const TOOLTIP_INFO = {
       <p>Determines how text flows on the page.</p>
       <h3>Directions:</h3>
       <ul>
-        <li><code>Left → Right (LTR)</code> — Standard (English, most European)</li>
-        <li><code>Right → Left (RTL)</code> — Reversed (Arabic, Hebrew)</li>
-        <li><code>Top → Bottom (TTB)</code> — Vertical top-down (Classic Chinese)</li>
-        <li><code>Bottom → Top (BTT)</code> — Vertical reverse (Rare)</li>
+        <li><code>Left → Right (LTR)</code> - Standard (English, most European)</li>
+        <li><code>Right → Left (RTL)</code> - Reversed (Arabic, Hebrew)</li>
+        <li><code>Top → Bottom (TTB)</code> - Vertical top-down (Classic Chinese)</li>
+        <li><code>Bottom → Top (BTT)</code> - Vertical reverse (Rare)</li>
       </ul>
       <p><strong>Effect:</strong> Changes how sample sentences and words are displayed.</p>
     `
@@ -506,7 +506,7 @@ const TOOLTIP_INFO = {
       <ul>
         <li>Top row (uppercase) = English letter/combination</li>
         <li>Bottom row = Corresponding phoneme from your inventory</li>
-        <li><code>—</code> (dash) = No phoneme available for that letter</li>
+        <li><code>-</code> (dash) = No phoneme available for that letter</li>
       </ul>
       <h3>Sections:</h3>
       <ul>

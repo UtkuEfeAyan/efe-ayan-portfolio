@@ -51,7 +51,7 @@ function updateReferencePanel() {
   host.innerHTML = "";
   const img = document.createElement("img");
   img.className = "reference-img";
-  img.alt = currentInspiration.name + " — original";
+  img.alt = currentInspiration.name + " - original";
   img.src = currentInspiration.assetUrl;
   host.appendChild(img);
 }
@@ -83,7 +83,7 @@ function evaluate() {
   loadPixels();
   let error = 0;
   let count = 0;
-  // Subsample (~1/4 of channels) — enough signal, much cheaper at large canvases
+  // Subsample (~1/4 of channels): enough signal, much cheaper at large canvases
   const stride = 16;
   const n = pixels.length;
   for (let i = 0; i < n; i += stride) {

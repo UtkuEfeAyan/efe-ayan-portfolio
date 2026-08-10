@@ -6,11 +6,11 @@ Minimal neon portfolio inspired by a clean Home → Technologies → Featured Pr
 
 | Path | Description |
 |------|-------------|
-| `/` | Home — portrait, title, tech logos, featured projects |
+| `/` | Home - portrait, title, tech logos, featured projects |
 | `/about/` | About Me |
 | `/projects/` | Polished / team game projects |
 | `/minis/` | Prototypes, shaders, TouchDesigner, audio sketches |
-| `/toys/` | Live Toys — embeds **Voices of Void** conlang generator |
+| `/toys/` | Live Toys - embeds **Voices of Void** conlang generator |
 | `/contact/` | Contact form |
 
 ## Live Toys

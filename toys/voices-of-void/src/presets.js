@@ -9,7 +9,7 @@ window.LANGUAGE_PRESETS = {
   elven: {
     id: "elven",
     name: "Elven",
-    description: "Balanced inventory with bright vowels. Word order: VSO — verb–subject–object.",
+    description: "Balanced inventory with bright vowels. Word order: VSO - verb–subject–object.",
     grammar: {
       wordOrder: "vso",
       syllablePattern: "cvc",

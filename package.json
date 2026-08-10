@@ -2,7 +2,7 @@
   "name": "efe-ayan-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Efe Ayan — Game Designer, Creative Coder & AI Researcher portfolio",
+  "description": "Efe Ayan - Game Designer, Creative Coder & AI Researcher portfolio",
   "engines": {
     "node": ">=24"
   },

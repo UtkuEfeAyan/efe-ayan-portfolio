@@ -403,7 +403,7 @@ class GameScene extends Phaser.Scene {
 
 
 
-    // Body — 25% bigger (was 30×24 → 38×30)
+    // Body, 25% bigger (was 30x24 to 38x30)
 
     g.fillStyle(0xFFD700);
 
@@ -771,7 +771,7 @@ class GameScene extends Phaser.Scene {
 
 
   schedulePipes() {
-    // Distance-based spawning via ensurePipes() — kept as no-op for safety
+    // Distance-based spawning via ensurePipes(), kept as no-op for safety
   }
 
 

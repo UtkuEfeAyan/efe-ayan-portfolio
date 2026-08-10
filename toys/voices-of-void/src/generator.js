@@ -658,7 +658,7 @@
       
       const conlang = document.createElement("div");
       conlang.className = "alphabet-mapping-conlang";
-      conlang.textContent = mapping.consonants[letter] || "—";
+      conlang.textContent = mapping.consonants[letter] || "-";
       
       chip.appendChild(english);
       chip.appendChild(conlang);
@@ -690,7 +690,7 @@
       
       const conlang = document.createElement("div");
       conlang.className = "alphabet-mapping-conlang";
-      conlang.textContent = mapping.vowels[letter] || "—";
+      conlang.textContent = mapping.vowels[letter] || "-";
       
       chip.appendChild(english);
       chip.appendChild(conlang);

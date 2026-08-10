@@ -398,7 +398,7 @@ function applyMove(i, j) {
     const animalLevel = getAnimalLevel(i, j);
 
     if (player.score > WINNIG_SCORE + 10) {
-      // Too strong — blocked!
+      // Too strong, blocked!
       return;
     } else {
       // Defeat and gain score

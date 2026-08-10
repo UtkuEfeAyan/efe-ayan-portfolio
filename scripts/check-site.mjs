@@ -10,6 +10,7 @@ const required = [
   "about/index.html",
   "projects/index.html",
   "minis/index.html",
+  "games/index.html",
   "contact/index.html",
   "toys/index.html",
   "toys/voices-of-void/index.html",
