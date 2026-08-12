@@ -18,7 +18,9 @@ class SidePanel {
     const bgAlpha = fish ? 245 : 80;
     fill(255, 240, 210, bgAlpha);
     stroke(120, 100, 60, bgAlpha);
-    rect(this.x, this.y, this.w, this.currentH, 24);
+    // this.x is the horizontal CENTER of the panel; rect() draws from the
+    // top-left corner, so offset by half the width to keep it fully on-screen.
+    rect(this.x - this.w / 2, this.y, this.w, this.currentH, 24);
 
     fill(50);
     textAlign(LEFT, TOP);

@@ -227,16 +227,12 @@ async function setup() {
   background(100);
 
   // ---------- canvas ----------
-  const cnvScale = 0.8;
-  const cWidth   = windowWidth  * cnvScale;
-  const cHeight  = windowHeight * cnvScale;
-  const xPos     = (windowWidth  - cWidth)  / 2 - 20; // shift right to make room for UI
-  const yPos     = 80;
-
+  // Fill the whole available viewport so the tank fits its container without
+  // scrollbars, instead of being forced into a small fixed-size box.
   seededRandom = seededRandomGenerator(seed);
 
-  cnv = createCanvas(cWidth, cHeight);
-  cnv.position(xPos, yPos);
+  cnv = createCanvas(windowWidth, windowHeight);
+  cnv.position(0, 0);
   imageMode(CENTER);
 
   fishNamesData = await loadJSONAsync('./assets/fishnames.json');
@@ -352,8 +348,11 @@ spawnButton.mousePressed(spawnRandomFishFromJSON);
   
 
   // ---------- RIGHT-HAND FISH STATS PANEL ----------
-  let panelWidth = 250;
-  sidePanel = new SidePanel(width - panelWidth + 100, 10, panelWidth + 50, height - 300);
+  // Anchored to the top-right corner with a small margin so it never spills
+  // past the edge of the canvas. this.x is the horizontal CENTER of the panel.
+  const panelMargin = 24;
+  const panelW = 300;
+  sidePanel = new SidePanel(width - panelMargin - panelW / 2, 10, panelW, height - 300);
 
   // ---------- Almanac ----------
   almanac = new Almanac();
@@ -742,6 +741,7 @@ function mouseReleased() {
 //SID E PANEL STUFF
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  sidePanel = new SidePanel(width - panelWidth, 0, panelWidth, height);
-
+  const panelMargin = 24;
+  const panelW = 300;
+  sidePanel = new SidePanel(width - panelMargin - panelW / 2, 10, panelW, height - 300);
 }
