@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whirlpool Sun</title>
+  <script>
+    (function () {
+      var path = location.pathname;
+      if (!path.endsWith('/') && !/\.html$/i.test(path)) {
+        location.replace(path + '/' + location.search + location.hash);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="back-to-site" href="../../index.html">← My Website</a>
+  <div class="hud" id="hud">
+    <h1>Whirlpool Sun</h1>
+    <p>Click and drag: X heats the core, Y grows the star. Release to reset.</p>
+  </div>
+  <canvas id="gl"></canvas>
+  <script src="player.js"></script>
+</body>
+</html>

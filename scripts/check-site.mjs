@@ -24,11 +24,16 @@ const required = [
   "minis/cmpm147/experiment5/experiment_5a/assets/lunch-on-a-skyscraper.jpg",
   "minis/flappy-bird/index.html",
   "minis/flappy-bird/game.js",
+  "minis/whirlpool-sun/index.html",
+  "minis/whirlpool-sun/player.js",
+  "minis/whirlpool-sun/style.css",
   "minis/fish-tank/index.html",
   "minis/day-of-reckoning/index.html",
   "minis/day-of-reckoning/js/player.js",
   "minis/day-of-reckoning/assets/DayOfReckoning.ink",
   "minis/day-of-reckoning/assets/DeadCity.ink",
+  "assets/videos/touchdesigner-installation.mp4",
+  "assets/images/touchdesigner-installation.jpg",
   ".nojekyll",
 ];
 

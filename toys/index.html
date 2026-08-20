@@ -32,8 +32,10 @@
       </p>
       <div class="toy-tabs" role="tablist" aria-label="Live toys">
         <button class="toy-tab active" type="button" data-toy="void" role="tab" aria-selected="true">Language Generator</button>
+        <button class="toy-tab" type="button" data-toy="td" role="tab" aria-selected="false">TouchDesigner</button>
         <button class="toy-tab" type="button" data-toy="map" role="tab" aria-selected="false">Map Generator</button>
         <button class="toy-tab" type="button" data-toy="circles" role="tab" aria-selected="false">Circle Image Generator</button>
+        <button class="toy-tab" type="button" data-toy="whirlpool" role="tab" aria-selected="false">Whirlpool Sun</button>
       </div>
     </section>
 
@@ -54,6 +56,32 @@
             loading="lazy"
             allow="clipboard-write"
           ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Camera Installation -->
+    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;" id="toy-td" data-toy-panel="td" hidden>
+      <div class="container-wide">
+        <p class="toy-blurb">
+          <strong>TouchDesigner — live demo.</strong> Main project: a camera installation that turns the body into painterly trails
+          (gallery / museum-scale). The same TD work includes audio visualizers for other pieces. This is a recording of the realtime camera patch.
+        </p>
+        <div class="toy-actions">
+          <a class="btn btn-primary" href="../projects/index.html#touchdesigner">Project details</a>
+          <a class="btn btn-ghost" href="../assets/videos/touchdesigner-installation.mp4" download>Download video</a>
+        </div>
+        <div class="toy-embed toy-embed-video">
+          <video
+            id="td-video"
+            controls
+            playsinline
+            loop
+            poster="../assets/images/touchdesigner-installation.jpg"
+            aria-label="TouchDesigner camera installation documentation"
+          >
+            <source src="../assets/videos/touchdesigner-installation.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -99,6 +127,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Whirlpool Sun -->
+    <section class="section" style="padding-top:0; padding-bottom:2rem; display:none;" id="toy-whirlpool" data-toy-panel="whirlpool" hidden>
+      <div class="container-wide">
+        <p class="toy-blurb">
+          <strong>Whirlpool Sun</strong>: GLSL star with a swirling photosphere and a procedural galaxy behind it.
+          Click and drag — X heats the core, Y grows the sphere. Release to reset.
+        </p>
+        <div class="toy-actions">
+          <a class="btn btn-primary" href="../minis/whirlpool-sun/index.html" target="_blank" rel="noopener">Open fullscreen</a>
+          <a class="btn btn-ghost" href="https://www.shadertoy.com/view/WfcyWS" target="_blank" rel="noopener">Shadertoy</a>
+        </div>
+        <div class="toy-embed">
+          <iframe
+            title="Whirlpool Sun"
+            src="../minis/whirlpool-sun/index.html"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -113,21 +162,34 @@
     (function () {
       const tabs = document.querySelectorAll('[data-toy]');
       const panels = document.querySelectorAll('[data-toy-panel]');
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const id = tab.getAttribute('data-toy');
-          tabs.forEach((t) => {
-            const on = t === tab;
-            t.classList.toggle('active', on);
-            t.setAttribute('aria-selected', String(on));
-          });
-          panels.forEach((p) => {
-            const show = p.getAttribute('data-toy-panel') === id;
-            p.hidden = !show;
-            p.style.display = show ? '' : 'none';
-          });
+      function showToy(id) {
+        const match = [...tabs].find((t) => t.getAttribute('data-toy') === id);
+        if (!match) return;
+        tabs.forEach((t) => {
+          const on = t === match;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', String(on));
         });
+        panels.forEach((p) => {
+          const show = p.getAttribute('data-toy-panel') === id;
+          p.hidden = !show;
+          p.style.display = show ? '' : 'none';
+        });
+        const tdVideo = document.getElementById('td-video');
+        if (tdVideo) {
+          if (id === 'td') {
+            tdVideo.play().catch(() => {});
+          } else {
+            tdVideo.pause();
+          }
+        }
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+      }
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => showToy(tab.getAttribute('data-toy')));
       });
+      const fromHash = (location.hash || '').replace('#', '');
+      if (fromHash) showToy(fromHash);
     })();
   </script>
 </body>

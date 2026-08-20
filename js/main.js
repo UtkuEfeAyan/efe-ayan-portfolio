@@ -49,6 +49,17 @@
     });
   });
 
+  const hashTarget = location.hash && document.querySelector(location.hash);
+  if (hashTarget && hashTarget.classList.contains('card')) {
+    hashTarget.classList.add('open');
+    const btn = hashTarget.querySelector('[data-detail-toggle]');
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.textContent = 'Hide details';
+    }
+    hashTarget.scrollIntoView({ block: 'start' });
+  }
+
   /* ── External-link warning modal ──
      Any <a> or <button> with data-external-warn will trigger the modal.
      For <a> use href; for <button> use data-href.
